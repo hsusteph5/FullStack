@@ -11,7 +11,7 @@ const NavBar = ({ user, logout}) => {
   } else {
     return (
       <div>
-        <p> Sign Up</p>
+        <p> Nav bar here</p>
       </div>
     );
   }

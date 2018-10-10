@@ -1,57 +1,81 @@
 import React from 'react';
-import { merge } from 'lodash/merge';
 
 class SessionForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      email: "",
-      password: ""
-    };
-    this.updateEmail = this.updateEmail.bind(this);
-    this.updatePassword = this.updatePassword.bind(this);
+    if (this.props.formType === 'signup') {
+      this.state = {
+        email: "",
+        password: "",
+        fname: "",
+        lname: ""
+      };
+    } else {
+      this.state = {
+        email: "",
+        password: "",
+      };
+    }
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e){
     e.preventDefault();
-    const user = merge({}, this.state);
-    this.props.processForm(user);
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user)
+      .then(() => this.props.history.push('/'));
   }
 
-  updateEmail(e){
-    this.setState({ email: e.target.value})
-  }
-
-  updatePassword(e){
-    this.setState({ password: e.target.value})
+  update(field){
+    return (e) => this.setState({[field]: e.currentTarget.value});
   }
 
   render() {
+    let buttonType = "Log In";
+
+    //changing the button when there is a sign up;
     if (this.props.formType === 'signup') {
-       signupField = (<div>
-        <label> fname:
-          <input type="text" onChange={this.updateEmail} value={this.state.email}></input>
-        </label>
-        <label> lastname:
-          <input type="text" onChange={this.updateEmail} value={this.state.email}></input>
-        </label>
-      </div>);
-      let buttonDisplay = 'Sign Up';
-    } else {
-      const buttonDisplay = 'Log In';
+      buttonType = "Sign Up";
     }
-    debugger;
+
+    //input fname and lname for the sign table
+    let signupForm = (this.props.formType === 'signup') ?
+      (<div>
+          <label> fname:
+            <input type="text"
+              onChange={this.update('fname')}
+              value={this.state.fname}>
+            </input>
+          </label>
+
+          <label> lastname:
+            <input type="text"
+              onChange={this.update('lname')}
+              value={this.state.lname}></input>
+          </label>
+      </div>) : ("");
+
+    //regular login form
     return (
       <div>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-           { signupField }
+        <form onSubmit={this.handleSubmit}>
+           { signupForm }
           <label> Email:
-            <input type="text" onChange={this.updateEmail} value={this.state.email}></input>
+            <input type="text"
+              onChange={this.update('email')}
+              value={this.state.email}>
+            </input>
           </label>
+
           <label> Password:
-            <input type="password" onChange={this.updatePassword} value={this.state.password}></input>
+            <input type="password"
+              onChange={this.update('password')}
+              value={this.state.password}>
+            </input>
           </label>
-          <button type="submit">{buttonDisplay}</button>
+
+          <button type="submit">{buttonType}</button>
         </form>
       </div>
     );
