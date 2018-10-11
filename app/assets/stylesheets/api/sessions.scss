@@ -1,6 +1,12 @@
 // Place all the styles related to the api::sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.session-container {
+  margin: 0 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .session-form-content img {
   width: 350px;

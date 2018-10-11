@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ShowErrors from '../auth_errors/errors_container';
 
 class SessionForm extends React.Component {
   constructor(props){
     super(props);
-    // if (this.props.formType === 'signup') {
       this.state = {
         email: "",
         password: "",
@@ -13,7 +13,12 @@ class SessionForm extends React.Component {
       }
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
+
+  // compontDidMount(){
+  //   return this.props
+  // }
 
   handleSubmit(e){
     e.preventDefault();
@@ -26,11 +31,36 @@ class SessionForm extends React.Component {
     return (e) => this.setState({[field]: e.currentTarget.value});
   }
 
+
+  renderErrors() {
+    let newErrors = [];
+
+    if (this.props.errors.session.length > 0) {
+      newErrors = this.props.errors.session.slice();
+    } else if (this.props.errors.signup.length > 0) {
+      newErrors = this.props.errors.signup.slice();
+    } else if (this.props.errors.logout.length > 0){
+      newErrors = this.props.errors.logout.slice();
+    }
+
+    if (newErrors.length > 0) {
+      return (
+        <div className="signup-errors">
+          <ul className="signup-errors-list">
+            { newErrors.map((error, i) =>
+              (<li key={`error-${i}`}> { error }</li> )
+            )}
+          </ul>
+        </div>
+      );
+    }
+  }
+
   render() {
     let buttonType = "Log In";
     let footer = (<p>New to Yip?</p>)
     let link = (<Link to="/signup">Sign up</Link>);
-    //changing the button when there is a sign up;
+
     if (this.props.formType === 'signup') {
       buttonType = "Sign Up";
       footer = (<p>Already on Yip?</p>)
@@ -61,7 +91,6 @@ class SessionForm extends React.Component {
           <p> By logging in, you agree to Yip's <a href="/">Terms of Service</a> and <a href="/">Privacy Policy</a></p>
         </div>
       );
-
     //regular login form
     return (
       <div>
@@ -69,35 +98,39 @@ class SessionForm extends React.Component {
           <Link to="/">Yip!</Link>
         </header>
 
-        <div className="session-form-content">
+        <div className="session-container">
+          { this.renderErrors() }
+          <div className="session-form-content">
 
-          <div className="session-form-container">
+            <div className="session-form-container">
 
-            <form onSubmit={this.handleSubmit}>
-              { signupForm }
-              <input type="email"
-                onChange={this.update('email')}
-                value={this.state.email} placeholder="Email" className="login-input">
-              </input>
+              <form onSubmit={this.handleSubmit}>
+                { signupForm }
+                <input type="email"
+                  onChange={this.update('email')}
+                  value={this.state.email} placeholder="Email" className="login-input">
+                </input>
 
-              <input type="password"
-                onChange={this.update('password')}
-                value={this.state.password} placeholder="Password" className="login-input">
-              </input>
+                <input type="password"
+                  onChange={this.update('password')}
+                  value={this.state.password} placeholder="Password" className="login-input">
+                </input>
 
 
-              <button type="submit" className="session-button">{buttonType}</button>
-              <div className="footer">
-                { footer }
-                { link }
-              </div>
+                <button type="submit" className="session-button">{buttonType}</button>
+                <div className="footer">
+                  { footer }
+                  { link }
+                </div>
 
-            </form>
+              </form>
+            </div>
+
+            <img src="https://s3-media4.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="illustration"></img>
+
           </div>
 
-          <img src="https://s3-media4.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="illustration"></img>
-
-      </div>
+        </div>
       </div>
     );
   }

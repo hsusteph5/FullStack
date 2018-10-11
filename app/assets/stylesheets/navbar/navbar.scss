@@ -24,14 +24,14 @@ a.writeReview {
   padding-left: 0;
 }
 
-a.signup-nav {
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-  padding: 10px 35px;
-  border-radius: 5px;
-  border: 2px solid white;
-}
+// a.signup-nav {
+//   display: inline-block;
+//   text-decoration: none;
+//   color: white;
+//   padding: 10px 35px;
+//   border-radius: 5px;
+//   border: 2px solid white;
+// }
 
 .login {
   margin-right: 20px;
@@ -41,10 +41,10 @@ a.signup-nav {
   border-bottom: 2px solid white;
 }
 
-.signup-nav:hover {
-  background: white;
-  color: #696969;
-}
+// .signup-nav:hover {
+//   background: white;
+//   color: #696969;
+// }
 
 .left-bar-navigtaion, .right-bar-navigation {
   width: 100%;
@@ -117,7 +117,7 @@ a.signup-nav {
   background-color: white;
   min-width: 220px;
   min-height: 150px;
-  padding: 12px 16px;
+  padding: 12px 15px;
   z-index: 3;
 }
 
@@ -222,4 +222,21 @@ button.logout-button {
   border-top: 1px solid lightgrey;
   padding: 10px 10px;
   font-weight: 400;
+}
+
+button.demo-user-button {
+  box-sizing: border-box;
+  width: 120px;
+  height: 45px;
+  color: white;
+  border-radius: 3px;
+  border: 2px solid white;
+  font-size: 14px;
+  font-weight: 700;
+  background: none;
+}
+
+button.demo-user-button:hover {
+  background: white;
+  color: #696969;
 }

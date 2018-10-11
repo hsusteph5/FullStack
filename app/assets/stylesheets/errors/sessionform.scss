@@ -1,0 +1,15 @@
+.signup-errors {
+  margin-top: 20px;
+  background: #ffc4cd;
+  height: 60px;
+}
+
+.signup-errors-list {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-errors > ul > li {
+  color: #000000;
+}
