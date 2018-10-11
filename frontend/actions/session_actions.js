@@ -18,7 +18,10 @@ export const receiveErrors = (errors) => ({
 export const loginUser = (user) => {
   return dispatch => {
     return APIUtil.login(user)
-      .then(user => dispatch(receiveUser(user)))
+      .then(
+        user => dispatch(receiveUser(user)),
+        error => dispatch(receiveErrors(error.responseJSON))
+      )
   }
 }
 

@@ -9,7 +9,22 @@ import { loginUser, signupUser, logout } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
+
+  let store;
+  // telling your currentuser that you are still logged in (talk to backend)
+  if(window.currentUser) {
+    const preloadedState = {
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser }
+      },
+      session: { currentUserId: window.currentUser.id}
+    }
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
+
 
   //testing
   window.login = login;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NavBar = ({ user, logout}) => {
   //if this user exists
@@ -11,15 +12,11 @@ const NavBar = ({ user, logout}) => {
   } else {
     return (
       <div>
-        <p> Nav bar here</p>
+        <Link to="/signup">Sign up</Link>
+        <Link to="/login">Login</Link>
       </div>
     );
   }
 }
 
 export default NavBar;
-
-
-
-// <Link to="/signup">Sign up</Link>
-// <Link to="/login">Login</Link>
