@@ -1,0 +1,82 @@
+.splash-page {
+  background-image: image-url("background-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 2;
+}
+
+.splash-page-container {
+  padding: 60px 20%;
+}
+
+.Find, .Near {
+  box-sizing: border-box;
+  color: #696969;
+  display: flex;
+  align-items: center;
+  height: 45px;
+  background: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+footer.credits {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+footer p {
+  color: white;
+}
+
+.search-fields-container {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-border-box {
+  box-sizing: border-box;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  width: 1055px;
+}
+
+.search-bar {
+  font-size: 18px;
+  border: 1px solid white;
+  width: 38%;
+}
+
+.Find {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 0 10px;
+}
+
+.Near {
+  padding: 0 10px;
+}
+
+.search-icon {
+  background: #CC0000;
+  color: white;
+  font-size: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0 25px;
+  border: 1px solid #CC0000;
+  height: 45px;
+}
