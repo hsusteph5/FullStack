@@ -9,9 +9,12 @@
   font-weight: 700;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 30px;
   height: 45px;
   z-index: 1;
+  color: #EE7600;
 }
 
 .nav-bar-container a {
@@ -28,20 +31,20 @@ a.writeReview {
   margin-right: 20px;
 }
 
-.nav-bar-container li:hover {
-  border-bottom: 2px solid white;
+
+.nav-bar-container a {
+  border-bottom: 2px solid none;
 }
 
-.left-bar-navigtaion, .right-bar-navigation {
-  width: 100%;
+.nav-bar-container a:hover {
+  border-bottom: 2px solid white;
 }
 
 .left-bar-navigation > ul, .right-bar-navigation > ul {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  width: inherit;
-  height: 40px;
 }
 
 .left-bar-navigation > ul {
@@ -98,7 +101,7 @@ a.writeReview {
 }
 
 .dropdown-content {
-  display: none;
+  // display: none;
   left: -230px;
   top: 50px;
   position: absolute;
@@ -123,7 +126,6 @@ a.writeReview {
 .user-icon {
   box-sizing: border-box;
   position: relative;
-  width: 60px;
   display: flex;
   flex-direction: row;
 }
@@ -137,7 +139,7 @@ a.writeReview {
 .dropdown-content a {
   font-size: 15px;
   padding: 0px;
-  color: #3F33FF;
+  color: #0073bb;
 }
 
 .button-container {
@@ -194,11 +196,29 @@ a.writeReview {
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
-  color: #3F33FF;
+  color: #0073bb;
   border: white;
   font-size: 14px;
   font-weight: 700;
   padding: 20px 0;
+  cursor: pointer;
+}
+
+.dropdown-content button:focus {
+  outline: none;
+}
+
+.dropdown-content button:hover {
+  text-decoration: underline;
+}
+
+.dropdown-content a {
+  cursor: pointer
+}
+
+.user-info > a:hover{
+  text-decoration: underline;
+  border: none;
 }
 
 .user-info {
@@ -216,7 +236,7 @@ button.logout-button {
 button.demo-user-button {
   // box-sizing: border-box;
   width: 120px;
-  height: 45px;
+  height: 38px;
   color: white;
   border-radius: 3px;
   border: 2px solid white;
@@ -228,6 +248,7 @@ button.demo-user-button {
 button.demo-user-button:hover {
   background: white;
   color: #696969;
+  cursor: pointer;
 }
 
 li.demo-user-list:hover {

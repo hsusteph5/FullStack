@@ -64,7 +64,7 @@ class NavBar extends React.Component {
 
                               <img src={icon}></img>
                               <div className="user-info">
-                                <Link to="/">{this.props.user.fname} {this.props.user.lname}</Link>
+                                <Link to="/">{this.props.user.fname} {this.props.user.lname.slice(0,1)}.</Link>
                                 <p>San Francisco, CA</p>
                                 <div className="nav-icons">
                                   <i className="fas fa-user-friends"></i>

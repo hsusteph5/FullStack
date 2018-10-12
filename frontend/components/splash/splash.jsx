@@ -15,7 +15,7 @@ class Splash extends React.Component {
 
                   <div className="Find"><p>Find</p></div>
                   <input type="text" className="search-bar" placeholder="cafes, salons, hotels..." ></input>
-                  <div className="Near"><p>|</p></div>
+                  <div className="line"><p>|</p></div>
                   <div className="Near"><p>Near</p></div>
                   <input type="text" className="search-bar" placeholder="Financial District"></input>
                   <button className="search-icon"><i className="fas fa-search"></i></button>

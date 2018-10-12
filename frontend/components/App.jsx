@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import LoginFormContainer from './user_auth_form/login_form_container';
@@ -10,8 +10,10 @@ const App = () => (
   <Switch>
     <AuthRoute exact path='/login' component={LoginFormContainer} />
     <AuthRoute exact path='/signup' component={SignupFormContainer} />
-    <Route component={Splash} />
+
+    <Route exact path="/"component={Splash} />
   </Switch>
 );
 
+    // <Redirect from="/*" to="/" />
 export default App;
