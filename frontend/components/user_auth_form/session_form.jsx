@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ShowErrors from '../auth_errors/errors_container';
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -16,9 +15,9 @@ class SessionForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // compontDidMount(){
-  //   return this.props
-  // }
+  componentDidMount(){
+    this.props.resetErrors();
+  }
 
   handleSubmit(e){
     e.preventDefault();
