@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import yip from '../../../app/assets/images/yip-logo.png';
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -94,7 +95,7 @@ class SessionForm extends React.Component {
     return (
       <div>
         <header className="session-form-nav">
-          <Link to="/">Yip!</Link>
+          <Link to="/"><img className="yip-logo" src={yip}></img></Link>
         </header>
 
         <div className="session-container">

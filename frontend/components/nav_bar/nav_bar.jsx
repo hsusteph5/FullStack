@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import icon from '../../../app/assets/images/user-icon.png';
+import Modal from '../modal/modal';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -51,9 +52,13 @@ class NavBar extends React.Component {
               </ul>
             </div>
             <div className="right-bar-navigation">
+
+              <Modal />
+
               <ul>
                   <li className="user-icon">
                       <img src={icon}></img>
+
                       <div className="dropdown-container">
 
                         <div className='dropdown-button'>

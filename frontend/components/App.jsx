@@ -7,12 +7,12 @@ import SignupFormContainer from './user_auth_form/signup_form_container';
 import Splash from './splash/splash';
 
 const App = () => (
-  <Switch>
-    <AuthRoute exact path='/login' component={LoginFormContainer} />
-    <AuthRoute exact path='/signup' component={SignupFormContainer} />
+    <Switch>
+      <AuthRoute exact path='/login' component={LoginFormContainer} />
+      <AuthRoute exact path='/signup' component={SignupFormContainer} />
 
-    <Route exact path="/"component={Splash} />
-  </Switch>
+      <Route exact path="/"component={Splash} />
+    </Switch>
 );
 
     // <Redirect from="/*" to="/" />
