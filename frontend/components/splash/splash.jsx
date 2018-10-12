@@ -9,14 +9,14 @@ class Splash extends React.Component {
             <div className="splash-page-container">
 
               <NavBarContainer />
-              
+
               <div className="search-fields-container">
                 <div className="input-border-box">
 
-                  <span className="Find">Find</span>
+                  <div className="Find"><p>Find</p></div>
                   <input type="text" className="search-bar" placeholder="cafes, salons, hotels..." ></input>
-                  <span className="Near">|</span>
-                  <span className="Near">Near</span>
+                  <div className="Near"><p>|</p></div>
+                  <div className="Near"><p>Near</p></div>
                   <input type="text" className="search-bar" placeholder="Financial District"></input>
                   <button className="search-icon"><i className="fas fa-search"></i></button>
 

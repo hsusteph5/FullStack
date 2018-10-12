@@ -46,6 +46,7 @@ footer p {
   align-items: center;
 }
 
+
 .input-border-box {
   box-sizing: border-box;
   height: 45px;
@@ -79,4 +80,8 @@ footer p {
   padding: 0 25px;
   border: 1px solid #CC0000;
   height: 45px;
+}
+
+.search-icon:hover {
+  background: #FF0000;
 }
