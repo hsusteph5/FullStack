@@ -27,6 +27,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'jquery-rails'
 
+#https://stackoverflow.com/questions/808547/fully-custom-validation-error-message-with-rails/40254247#40254247
+#Add custom messages to the rails validation
+gem 'custom_error_message'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

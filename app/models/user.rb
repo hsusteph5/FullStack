@@ -13,9 +13,12 @@
 #
 
 class User < ApplicationRecord
-  validates :email, :password_digest, :fname, :lname, presence: true
+  validates :password_digest, presence: true
+  validates :email, :presence => {message: "^Email can't be be blank"}
+  validates :fname, :presence => {message: "^First name can't be blank"}
+  validates :lname, :presence => {message: "^Last name can't be blank"}
   validates :email, uniqueness: true
-  validates :password, length: { minimum: 6, allow_nil: true}
+  validates :password, length: { message: "Password must be 6 characters", minimum: 6, allow_nil: true}
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, password)
