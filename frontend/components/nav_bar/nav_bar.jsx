@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import icon from '../../../public/images/user-icon.png';
+import icon from '../../../app/assets/images/user-icon.png';
 
 class NavBar extends React.Component {
   constructor(props){
