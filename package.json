@@ -25,12 +25,17 @@
     "test": "test"
   },
   "scripts": {
-    "test": "webpack --watch --mode=development"
+    "test": "webpack --watch --mode=development",
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "file-loader": "^2.0.0"
+  },
+  "engines": {
+    "node": "8.4.0",
+    "npm": "6.1.0"
   }
 }
