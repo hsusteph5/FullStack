@@ -54,7 +54,7 @@ class NavBar extends React.Component {
               <ul>
                   <li className="user-icon">
                       <img src={icon}></img>
-                      <div className="dropdown">
+                      <div className="dropdown-container">
 
                         <div className='dropdown-button'>
                           <i className="fas fa-sort-down"></i>

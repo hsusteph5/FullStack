@@ -52,7 +52,6 @@ a.writeReview {
   justify-content: flex-end;
 }
 
-//make enough space for write a review
 .left-bar-navigation ul> li:first-of-type {
   min-width: 115px;
 }
@@ -88,7 +87,9 @@ a.writeReview {
   width: 40px;
 }
 
-.dropdown {
+
+//information for dropdown https://www.w3schools.com/css/css_dropdowns.asp
+.dropdown-container {
   position: relative;
   display: flex;
   justify-content: center;

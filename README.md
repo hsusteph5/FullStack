@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Credits:
+* dropdown: https://www.w3schools.com/css/css_dropdowns.asp
+* Photos: Background Splash Page by Roman Kraft on Unsplash
