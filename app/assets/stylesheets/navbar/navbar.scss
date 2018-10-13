@@ -89,6 +89,7 @@ a.writeReview {
 .right-bar-navigation > ul > li > img {
   height: 40px;
   width: 40px;
+  margin-right: 20px;
 }
 
 
@@ -101,7 +102,7 @@ a.writeReview {
 }
 
 .dropdown-content {
-  // display: none;
+  box-shadow: 0 0 4px 1px #696969;
   left: -230px;
   top: 50px;
   position: absolute;
@@ -111,10 +112,6 @@ a.writeReview {
   padding: 10px 15px;
   z-index: 3;
   border-radius: 3px;
-}
-
-.user-icon:hover .dropdown-content {
-  display: block;
 }
 
 .flex-dropdown-content {
@@ -128,6 +125,7 @@ a.writeReview {
   position: relative;
   display: flex;
   flex-direction: row;
+  padding-right: 10px;
 }
 
 .dropdown-content img {

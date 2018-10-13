@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import icon from '../../../app/assets/images/user-icon.png';
-import Modal from '../modal/modal';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -13,6 +12,7 @@ class NavBar extends React.Component {
       lname: "Hsu"
     }
     this.demoLogin = this.demoLogin.bind(this);
+
   }
 
   demoLogin(e) {
@@ -53,40 +53,10 @@ class NavBar extends React.Component {
             </div>
             <div className="right-bar-navigation">
 
-              <Modal />
-
               <ul>
                   <li className="user-icon">
-                      <img src={icon}></img>
+                      <img onClick = {() => this.props.openModal('dropdown')} src={icon}></img>
 
-                      <div className="dropdown-container">
-
-                        <div className='dropdown-button'>
-                          <i className="fas fa-sort-down"></i>
-                        </div>
-
-                        <div className="dropdown-content">
-
-                              <img src={icon}></img>
-                              <div className="user-info">
-                                <Link to="/">{this.props.user.fname} {this.props.user.lname.slice(0,1)}.</Link>
-                                <p>San Francisco, CA</p>
-                                <div className="nav-icons">
-                                  <i className="fas fa-user-friends"></i>
-                                  <div className="user-star"><i className="fas fa-star"></i></div>
-                                </div>
-                              </div>
-
-                              <div className="button-container">
-                                <button onClick={() => logout()}><i className="fas fa-user"></i>About Me</button>
-
-                                <button className="logout-button" onClick={this.props.logout}>Logout</button>
-                              </div>
-
-
-                        </div>
-
-                    </div>
                   </li>
               </ul>
             </div>
