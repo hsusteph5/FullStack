@@ -1,10 +1,8 @@
 class Api::BusinessesController < ApplicationController
   def index
-    # @business = Business.all
-    # render json: @business
     name = params[:businesses][:name]
+    # debugger;
     @businesses = Business.where("name ilike ?", "%#{name}%")
-    render json: @businesses
   end
 
 
