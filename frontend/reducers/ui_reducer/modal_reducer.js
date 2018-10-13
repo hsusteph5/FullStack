@@ -1,5 +1,5 @@
 import React from 'react';
-import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
+import { OPEN_MODAL, CLOSE_MODAL } from '../../actions/modal_actions';
 
 export default function modalReducer(state = null, action) {
   switch (action.type) {

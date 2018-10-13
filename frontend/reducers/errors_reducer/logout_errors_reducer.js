@@ -1,4 +1,4 @@
-import { RECEIVE_LOGOUT_ERRORS, RECEIVE_CURRENT_USER, RESET_ERRORS} from '../actions/session_actions';
+import { RECEIVE_LOGOUT_ERRORS, RECEIVE_CURRENT_USER, RESET_ERRORS} from '../../actions/session_actions';
 
 const logoutErrorsReducer = (oldState = [], action) => {
   switch (action.type) {

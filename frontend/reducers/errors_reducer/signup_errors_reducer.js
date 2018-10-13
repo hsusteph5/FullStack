@@ -1,4 +1,4 @@
-import { RECEIVE_SIGNUP_ERRORS, RECEIVE_CURRENT_USER, RESET_ERRORS} from '../actions/session_actions';
+import { RECEIVE_SIGNUP_ERRORS, RECEIVE_CURRENT_USER, RESET_ERRORS} from '../../actions/session_actions';
 
 const signupErrorsReducer = (oldState = [], action) => {
   switch (action.type) {
