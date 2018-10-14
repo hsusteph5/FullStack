@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import yip from '../../../app/assets/images/yip-logo.png';
-import Search from '../search/search';
+import SearchContainer from '../search/search_container';
 
 
 class Splash extends React.Component {
@@ -16,7 +16,7 @@ class Splash extends React.Component {
               <div className="logo-input-container">
 
                 <img className="logo-splash" src={yip}></img>
-                <Search />
+                <SearchContainer />
                 <footer className="credits">
                   <p>Photo Credits Photo by Roman Kraft on Unsplash</p>
                 </footer>

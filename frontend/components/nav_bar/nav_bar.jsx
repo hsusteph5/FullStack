@@ -21,8 +21,6 @@ class NavBar extends React.Component {
     this.props.loginUser(user);
   }
 
-
-
   render() {
     if(!this.props.user){
       return (

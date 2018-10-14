@@ -1,6 +1,6 @@
 import React from 'react';
 import BusinessesIndexItems from './businesses_index_items';
-
+import querySearch from 'stringquery';
 
 class BusinessesIndex extends React.Component {
   constructor(props) {
@@ -9,7 +9,12 @@ class BusinessesIndex extends React.Component {
 
 
   componentDidMount() {
-    this.props.fetchBusinesses({name: 'tea'});
+    let searchParams = this.props.location.search;
+    let params = querySearch(searchParams);
+    this.props.fetchBusinesses({name: `${params.name}`});
+
+    //need to clear out the search location
+    this.props.location.search = "";
   }
 
 
