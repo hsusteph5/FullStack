@@ -19,5 +19,6 @@ class Business < ApplicationRecord
   validates :name, :address, :phone, uniqueness: true
   validates :price, :inclusion => 1..4
 
-  #has many_many categories
+  has_one_attached :photo 
+  # has many_many categories
 end

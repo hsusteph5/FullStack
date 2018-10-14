@@ -17,3 +17,6 @@ public/images/
 /yarn-error.log
 
 .byebug_history
+
+
+/config/master.key
