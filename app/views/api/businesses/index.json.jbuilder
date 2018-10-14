@@ -1,3 +1,6 @@
+# extract each business into an array by id, name, address, phone
 @businesses.each do |business|
-  json.extract! business, :id, :address, :phone
+  json.set! business.id do
+    json.extract! business, :id, :name, :address, :phone
+  end
 end
