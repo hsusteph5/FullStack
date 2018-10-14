@@ -79,11 +79,13 @@ a.writeReview {
   justify-content: center;
   width: 20px;
   height: 40px;
-  background-color: rgba(0,0,0,0.4);
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: rgba(0,0,0,0.1);
 }
 
 .dropdown-button:hover {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.4);
 }
 
 .right-bar-navigation > ul > li > img {
@@ -102,13 +104,13 @@ a.writeReview {
 }
 
 .dropdown-content {
-  box-shadow: 0 0 4px 1px #696969;
+  box-shadow: 0 3px 6px 0px lightgrey;
   left: -230px;
   top: 50px;
   position: absolute;
   background-color: white;
-  min-width: 220px;
-  min-height: 150px;
+  min-width: 190px;
+  min-height: 200px;
   padding: 10px 15px;
   z-index: 3;
   border-radius: 3px;
@@ -158,19 +160,25 @@ a.writeReview {
 
 .fa-user-friends {
   margin-right: 20px;
+  color: #ec4c12;
 }
 
 .user-star {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 14px;
-  width: 14px;
+  text-align: center;
+  vertical-align: center;
+  height: 13px;
+  width: 13px;
   color: white;
-  background: red;
+  border-radius: 2px;
+  background: #ec4c12;
 }
 
 .fa-star {
+  // vertical-align: center;
+  // height: inherit;
   font-size: 10px;
 }
 
@@ -220,6 +228,7 @@ a.writeReview {
 }
 
 .user-info {
+  font-weight: 700;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;

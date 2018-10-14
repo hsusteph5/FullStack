@@ -38,9 +38,12 @@ class BusinessesIndex extends React.Component {
           </div>
         </div>
 
+        <div className="best-in-SF-background">
+          <BestInSF name={this.state.name}/>
+        </div>
+
         <div className="splash-page-container">
 
-          <BestInSF name={this.state.name}/>
 
           { businessName }
 

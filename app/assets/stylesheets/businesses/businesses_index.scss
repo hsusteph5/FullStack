@@ -1,24 +1,26 @@
 .business-nav-background {
-  background: red;
+  background: #d32323;
   height: 60px;
 }
 
 .business-nav-container {
-  width: 900px;
+  width: 975px;
   margin: auto;
   height: inherit;
 }
 
 //
-.nav-input-size {
+li.nav-input-size {
+  padding: 0px;
   display: flex;
   direction: row;
 }
 
 
 img.business-logo {
-  height: 60px;
-  width: 60px;
+  box-sizing: border-box;
+  height: 50px;
+  width: 70px;
 }
 
 .business-nav-background > .business-nav-container > .nav-bar {
@@ -31,10 +33,56 @@ img.business-logo {
 }
 
 .nav-input-size > .search-fields-container {
-  box-sizing: border-box;
-  width: 600px;
-  // height: 30px;
+  width: 700px;
+  height: 60px;
 }
+
+ul > li.businesses-button-list {
+  padding: 0 5px 0 0;
+}
+
+
+li > a.businesses-login-button, li > a.businesses-sign-up-button {
+  border-radius: 3px;
+  padding: 8px 13px;
+}
+
+li > a.businesses-login-button {
+  background: #d32323;
+  border: 1px solid #ad1b1b;
+}
+
+li > a.businesses-sign-up-button {
+  color: black;
+  background: white;
+  border: 1px solid white;
+}
+
+li.nav-input-size > a {
+  padding: 0;
+  border: none;
+}
+
+
+//writing over the initital hovers for the splash page
+
+li.nav-input-size > a:hover,  {
+  border-bottom: none;
+}
+
+li > a.businesses-login-button:hover{
+  border-bottom: 1px solid #ad1b1b;
+}
+
+li > a.businesses-sign-up-button:hover{
+  border-bottom: 1px solid white;
+}
+
+
+// div.input-border-box, .Find > p, .Near > p{
+//   height: 30px;
+//   font-size: 14px;
+// }
 
 // .business-nav-background > .business-nav-container > .nav-bar >
 //   .nav-bar-container > .left-bar-navigation > ul > .nav-input-size >

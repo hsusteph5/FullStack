@@ -2,8 +2,8 @@ import React from 'react';
 
 const BestInSF = (props) => {
   return (
-    <div>
-      <p> Best { props.name }s </p>
+    <div className="best-in-sf-container">
+      <p className="best"> Best { props.name } </p>
       <p> in San Fransisco, CA</p>
     </div>
   );

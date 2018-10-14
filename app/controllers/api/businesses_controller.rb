@@ -3,6 +3,7 @@ class Api::BusinessesController < ApplicationController
     name = params[:businesses][:name]
     # debugger;
     @businesses = Business.where("name ilike ?", "%#{name}%")
+    # render :index
   end
 
 
@@ -19,15 +20,3 @@ end
 
 # retrieval by url
 # http://localhost:3000/api/businesses?businesses[name]=boba
-
-
-#
-# $.ajax({
-#     method: "GET",
-#     url: "api/businesses",
-# 	data: {
-# 		businesses: {
-# 			name: 'boba'
-#         }
-#     }
-# })

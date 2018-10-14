@@ -49,21 +49,32 @@ class NavBar extends React.Component {
         </ul>
       );
 
+      //if the person is logged in and viewing business
+      if(this.props.location.pathname.includes("/businesses")){
+        left = (
+          <ul>
+            <li className="nav-input-size">
+                <Link to="/"><img className="business-logo" src={yip}></img></Link>
+                <Search />
+            </li>
+          </ul>
+        );
+      }
+
     //if the pathname is businesses
   } else if (this.props.location.pathname.includes("/businesses")) {
       left = (
         <ul>
           <li className="nav-input-size">
-              <img className="business-logo" src={yip}></img>
+              <Link to="/"><img className="business-logo" src={yip}></img></Link>
               <Search />
           </li>
         </ul>
       );
-
       right = (
         <ul>
-          <li><Link to="/login">Log In</Link></li>
-          <li><Link className="signup-nav" to="/signup">Sign Up</Link></li>
+          <li className="businesses-button-list"><Link className="businesses-login-button" to="/login">Log In</Link></li>
+          <li className="businesses-button-list"><Link className="businesses-sign-up-button" to="/signup">Sign Up</Link></li>
         </ul>
       );
     };
@@ -87,18 +98,3 @@ class NavBar extends React.Component {
 
 const NavBarWithRouter = withRouter(NavBar);
 export default NavBarWithRouter;
-
-
-
-
-    //if the the right will be Login and SignUp
-    // else {
-    //   right = (
-    //     <ul>
-    //       <li><Link to="/login">Log In</Link></li>
-    //       <li><Link className="signup-nav" to="/signup">Sign Up</Link></li>
-    //       <li className="demo-user-list"><button className="demo-user-button" onClick={this.demoLogin}>Demo User</button></li>
-    //     </ul>
-    //   );
-    // };
-    // debugger;
