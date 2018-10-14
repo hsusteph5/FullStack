@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import icon from '../../../app/assets/images/user-icon.png';
+import { withRouter } from "react-router";
+import Search from '../search/search_container';
+import yip from '../../../app/assets/images/yip-logo.png';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -22,37 +25,80 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const right = (this.props.user) ? (
-      <ul>
-          <li className="user-icon">
-              <img onClick = {() => this.props.openModal('dropdown')} src={icon}></img>
-          </li>
-      </ul>
-    ) : (
+    let right = (
       <ul>
         <li><Link to="/login">Log In</Link></li>
         <li><Link className="signup-nav" to="/signup">Sign Up</Link></li>
         <li className="demo-user-list"><button className="demo-user-button" onClick={this.demoLogin}>Demo User</button></li>
       </ul>
     );
+    let left = (
+      <ul>
+        <li><Link className="writeReview" to="/">Write a Review</Link></li>
+      </ul>
+    );
 
+
+    //if current user exists, the modal should always be there
+    if (this.props.user) {
+      right = (
+        <ul>
+            <li className="user-icon">
+                <img onClick = {() => this.props.openModal('dropdown')} src={icon}></img>
+            </li>
+        </ul>
+      );
+
+    //if the pathname is businesses
+  } else if (this.props.location.pathname.includes("/businesses")) {
+      left = (
+        <ul>
+          <li className="nav-input-size">
+              <img className="business-logo" src={yip}></img>
+              <Search />
+          </li>
+        </ul>
+      );
+
+      right = (
+        <ul>
+          <li><Link to="/login">Log In</Link></li>
+          <li><Link className="signup-nav" to="/signup">Sign Up</Link></li>
+        </ul>
+      );
+    };
     return (
       <div className="nav-bar">
         <nav className="nav-bar-container">
           <div className="left-bar-navigation">
-            <ul>
-              <li><Link className="writeReview" to="/">Write a Review</Link></li>
-            </ul>
+            { left }
           </div>
 
           <div className="right-bar-navigation">
             { right }
           </div>
+
         </nav>
       </div>
-
     );
   }
 }
 
-export default NavBar;
+
+const NavBarWithRouter = withRouter(NavBar);
+export default NavBarWithRouter;
+
+
+
+
+    //if the the right will be Login and SignUp
+    // else {
+    //   right = (
+    //     <ul>
+    //       <li><Link to="/login">Log In</Link></li>
+    //       <li><Link className="signup-nav" to="/signup">Sign Up</Link></li>
+    //       <li className="demo-user-list"><button className="demo-user-button" onClick={this.demoLogin}>Demo User</button></li>
+    //     </ul>
+    //   );
+    // };
+    // debugger;

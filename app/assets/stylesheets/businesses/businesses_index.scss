@@ -1,0 +1,48 @@
+.business-nav-background {
+  background: red;
+  height: 60px;
+}
+
+.business-nav-container {
+  width: 900px;
+  margin: auto;
+  height: inherit;
+}
+
+//
+.nav-input-size {
+  display: flex;
+  direction: row;
+}
+
+
+img.business-logo {
+  height: 60px;
+  width: 60px;
+}
+
+.business-nav-background > .business-nav-container > .nav-bar {
+  height: inherit;
+}
+
+
+.business-nav-background > .business-nav-container > .nav-bar > .nav-bar-container {
+  margin: 0;
+}
+
+.nav-input-size > .search-fields-container {
+  box-sizing: border-box;
+  width: 600px;
+  // height: 30px;
+}
+
+// .business-nav-background > .business-nav-container > .nav-bar >
+//   .nav-bar-container > .left-bar-navigation > ul > .nav-input-size >
+//   .nav-input-size > .search-fields-container {
+//     width: 500px;
+//   }
+
+// .nav-input-size > .search-fields-container {
+//   height: 45px;
+//   width: 500px;
+// }
