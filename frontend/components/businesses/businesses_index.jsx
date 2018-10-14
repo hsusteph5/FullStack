@@ -1,6 +1,7 @@
 import React from 'react';
 import BusinessesIndexItems from './businesses_index_items';
 import querySearch from 'stringquery';
+import Search from '../search/search_container';
 
 class BusinessesIndex extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class BusinessesIndex extends React.Component {
     );
     return (
       <div>
+          <Search />
           { businessName }
       </div>
     );
