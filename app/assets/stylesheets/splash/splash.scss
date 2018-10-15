@@ -33,26 +33,6 @@ img.logo-splash {
 
 }
 
-.Find, .Near {
-  color: #808080;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  height: inherit;
-  background: white;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.Find > p, .Near p{
-  color: #696969;
-}
-
-input.search-bar:focus {
-  outline: none;
-}
-
-
 footer.credits {
   position: absolute;
   bottom: 0;
@@ -64,59 +44,4 @@ footer.credits {
 
 footer p {
   color: white;
-}
-
-.search-fields-container {
-  // box-sizing: border-box;
-  width: 960px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.input-border-box {
-  box-sizing: border-box;
-  // height: 45px;
-  display: flex;
-  flex-direction: row;
-  width: 1060px;
-}
-
-.search-bar {
-  font-size: 18px;
-  border: 1px solid white;
-  width: 100%;
-}
-
-.Find {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  padding: 0 10px;
-}
-
-.Near {
-  padding: 0 10px;
-}
-
-.line {
-  display: flex;
-  align-items: center;
-  background: white;
-}
-
-.search-icon {
-  background: #CC0000;
-  color: white;
-  font-size: 20px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding: 0 25px;
-  border: 1px solid #CC0000;
-  height: inherit;
-}
-
-.search-icon:hover {
-  background: #FF0000;
-  cursor: pointer;
 }

@@ -29,7 +29,11 @@ class NavBar extends React.Component {
       <ul>
         <li><Link to="/login">Log In</Link></li>
         <li><Link className="signup-nav" to="/signup">Sign Up</Link></li>
-        <li className="demo-user-list"><button className="demo-user-button" onClick={this.demoLogin}>Demo User</button></li>
+        <li className="demo-user-list">
+          <button className="demo-user-button"
+            onClick={this.demoLogin}>Demo User
+          </button>
+        </li>
       </ul>
     );
     let left = (
@@ -67,14 +71,18 @@ class NavBar extends React.Component {
         <ul>
           <li className="nav-input-size">
               <Link to="/"><img className="business-logo" src={yip}></img></Link>
-              <SearchContainer height="35px"/>
+              <SearchContainer height="35px" fontsize="16px"/>
           </li>
         </ul>
       );
       right = (
         <ul>
-          <li className="businesses-button-list"><Link className="businesses-login-button" to="/login">Log In</Link></li>
-          <li className="businesses-button-list"><Link className="businesses-sign-up-button" to="/signup">Sign Up</Link></li>
+          <li className="businesses-button-list">
+            <Link className="businesses-login-button" to="/login">Log In</Link>
+          </li>
+          <li className="businesses-button-list">
+            <Link className="businesses-sign-up-button" to="/signup">Sign Up</Link>
+          </li>
         </ul>
       );
     };

@@ -11,12 +11,8 @@ function Modal({modal, closeModal}) {
   let component;
   switch (modal) {
     case 'dropdown':
-
       component = <DropDownContainer />;
       break;
-    // case 'signup':
-    //   component = <SignupFormContainer />;
-    //   break;
     default:
       return null;
   }
