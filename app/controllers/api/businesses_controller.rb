@@ -1,7 +1,6 @@
 class Api::BusinessesController < ApplicationController
   def index
     name = params[:businesses][:name]
-    # debugger;
     @businesses = Business.where("name ilike ?", "%#{name}%")
     # render :index
   end

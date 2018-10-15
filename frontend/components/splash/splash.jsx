@@ -16,7 +16,7 @@ class Splash extends React.Component {
               <div className="logo-input-container">
 
                 <img className="logo-splash" src={yip}></img>
-                <SearchContainer />
+                <SearchContainer height="45px"/>
                 <footer className="credits">
                   <p>Photo Credits Photo by Roman Kraft on Unsplash</p>
                 </footer>

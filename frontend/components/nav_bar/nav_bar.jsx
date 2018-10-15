@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import icon from '../../../app/assets/images/user-icon.png';
 import { withRouter } from "react-router";
-import Search from '../search/search_container';
+import SearchContainer from '../search/search_container';
 import yip from '../../../app/assets/images/yip-logo.png';
 
 class NavBar extends React.Component {
@@ -55,7 +55,7 @@ class NavBar extends React.Component {
           <ul>
             <li className="nav-input-size">
                 <Link to="/"><img className="business-logo" src={yip}></img></Link>
-                <Search />
+                <SearchContainer height="35px" />
             </li>
           </ul>
         );
@@ -67,7 +67,7 @@ class NavBar extends React.Component {
         <ul>
           <li className="nav-input-size">
               <Link to="/"><img className="business-logo" src={yip}></img></Link>
-              <Search />
+              <SearchContainer height="35px"/>
           </li>
         </ul>
       );
