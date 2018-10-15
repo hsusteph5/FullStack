@@ -28,7 +28,7 @@ class Search extends React.Component {
       height: this.props.height,
       fontSize: this.props.fontsize
     }
-
+    
     return (<div className="search-fields-container">
 
       <div className="input-border-box" style={style}>

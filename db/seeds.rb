@@ -46,12 +46,10 @@ cafe = Category.create!(title: 'cafe')
 categories << cafe
 bubble_tea = Category.create!(title: 'bubble tea')
 categories << bubble_tea
+coffee_and_tea = Category.create!(title: 'coffee & tea')
+categories << coffee_and_tea
 hotel = Category.create!(title: 'hotel')
 categories << hotel
-tea = Category.create!(title: 'tea')
-categories << tea
-chinese = Category.create!(title: 'chinese')
-categories << chinese
 spa = Category.create!(title: 'spa')
 categories << spa
 gym = Category.create!(title: 'gym')
@@ -60,6 +58,10 @@ Categorizing.destroy_all
 categorizings = []
 bubble_tea_boba_guys = Categorizing.create!(category_id: bubble_tea.id, business_id: boba_guys.id)
 categorizings << bubble_tea_boba_guys
+
+coffee_and_tea_boba_guys = Categorizing.create!(category_id: coffee_and_tea.id, business_id: boba_guys.id)
+categorizings << coffee_and_tea_boba_guys
+
 bubble_tea_steap_tea = Categorizing.create!(category_id: bubble_tea.id, business_id: steap_tea.id)
 categorizings << bubble_tea_steap_tea
 bubble_tea_black_sugar = Categorizing.create!(category_id: bubble_tea.id, business_id: black_sugar.id)

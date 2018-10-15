@@ -16,30 +16,25 @@ class BusinessesIndex extends React.Component {
   }
 
 
-//when the component updates, you want to compare your old search query to the new search query
-  componentDidUpdate() {
+//Why use componentDidMount vs COmponent did update??
+  componentDidMount() {
+    // debugger;
     if(this.query !== this.props.location.search) {
       let searchParams = this.props.location.search;
+      //searchQuery will parse out the name into a { name: 'tea'}
       let params = querySearch(searchParams);
-      this.setState({name: params.name});
+
+      // debugger;
+      //decode URI parses out of the white spaces %20
+      let decodeParams = decodeURI(params.name);
+      this.setState({name: decodeParams});
+
+      //since you are not visiting a new route, you need to see if the current params looks
+      //like the next params
       this.query = searchParams;
-      this.props.fetchBusinesses({name: `${params.name}`});
+      this.props.fetchBusinesses({name: `${decodeParams}`});
     }
   }
-
-  //
-  // componentDidMount() {
-  //   let searchParams = this.props.location.search;
-  //   let params = querySearch(searchParams);
-  //   this.setState({name: params.name});
-  //   this.query = searchParams;
-  //   this.props.fetchBusinesses({name: `${params.name}`});
-  //   // debugger;
-  //
-  //   //need to clear out the search location
-  //   // this.props.location.search = "";
-  //   // this.setState({name: ""});
-  // }
 
 
   render() {

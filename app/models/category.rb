@@ -8,7 +8,7 @@
 
 class Category < ApplicationRecord
   validates :title, presence: true
-  validates :title, length: { maximum: 10 }
+  validates :title, length: { maximum: 14 }
 
   has_many :categorizings,
     foreign_key: :category_id,
@@ -16,5 +16,5 @@ class Category < ApplicationRecord
 
   has_many :businesses,
     through: :categorizings,
-    source: :category
+    source: :business
 end

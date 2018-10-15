@@ -1,7 +1,16 @@
 class Api::BusinessesController < ApplicationController
   def index
-    name = params[:businesses][:name]
-    @businesses = Business.where("name ilike ?", "%#{name}%")
+    #name is
+    name = params[:businesses][:name].downcase
+    #find category based on what someone inputted
+    @category = Category.find_by(title: name)
+    #if the category exists
+    if @category
+      #find all associated businesses
+      @businesses = @category.businesses
+    else
+      @businesses = Business.where("name ilike ?", "%#{name}%")
+    end
     # render :index
   end
 
