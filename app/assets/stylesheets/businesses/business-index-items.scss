@@ -18,6 +18,10 @@
   border-top: 1px solid #e6e6e6;
 }
 
+.business-reviews-info > h3:first-of-type {
+  // display: block;
+  margin-bottom: 5px;
+}
 
 .main-businesses > h2 {
   font-weight: 700;
@@ -26,8 +30,8 @@
 }
 
 .business-index-items-container > img {
-  width: 210px;
-  height: 210px;
+  // width: 210px;
+  // height: 210px;
   border-radius: 3px;
   margin-right: 8px;
 }

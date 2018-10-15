@@ -11,19 +11,35 @@ class BusinessesIndex extends React.Component {
     this.state = {
       name: ""
     }
+
+    this.query = "";
   }
 
 
-  componentDidMount() {
-    let searchParams = this.props.location.search;
-    let params = querySearch(searchParams);
-    this.setState({name: params.name});
-    this.props.fetchBusinesses({name: `${params.name}`});
-
-    //need to clear out the search location
-    this.props.location.search = "";
-    // this.setState({name: ""})
+//when the component updates, you want to compare your old search query to the new search query
+  componentDidUpdate() {
+    if(this.query !== this.props.location.search) {
+      let searchParams = this.props.location.search;
+      let params = querySearch(searchParams);
+      this.setState({name: params.name});
+      this.query = searchParams;
+      this.props.fetchBusinesses({name: `${params.name}`});
+    }
   }
+
+  //
+  // componentDidMount() {
+  //   let searchParams = this.props.location.search;
+  //   let params = querySearch(searchParams);
+  //   this.setState({name: params.name});
+  //   this.query = searchParams;
+  //   this.props.fetchBusinesses({name: `${params.name}`});
+  //   // debugger;
+  //
+  //   //need to clear out the search location
+  //   // this.props.location.search = "";
+  //   // this.setState({name: ""});
+  // }
 
 
   render() {
