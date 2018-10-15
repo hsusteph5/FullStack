@@ -21,7 +21,7 @@ class Splash extends React.Component {
                   <p>Photo Credits Photo by Roman Kraft on Unsplash</p>
                 </footer>
 
-
+                <p> Photo by rawpixel on Unsplash </p>
               </div>
 
             </div>

@@ -22,6 +22,7 @@ class BusinessesIndex extends React.Component {
 
     //need to clear out the search location
     this.props.location.search = "";
+    // this.setState({name: ""})
   }
 
 
