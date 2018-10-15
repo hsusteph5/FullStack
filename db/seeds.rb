@@ -34,3 +34,41 @@ asha_tea = Business.create!(name: 'Asha Tea House', address: "17 Kearny St San F
 businesses << asha_tea
 crown_crumpet = Business.create!(name: 'Crown & Crumpet Tea Stop Cafe', address: "1746 Post St San Francisco, CA 94115", phone: '(415) 771-4252)', url: "websitecrownandcrumpet.com", price: 2)
 businesses << crown_crumpet
+hollow =  Business.create!(name: 'Hollow', address: "1435 Irving St San Francisco, CA 94122", phone: '(415) 242-4119', url: "hollowsf.com", price: 1)
+businesses << hollow
+the_mill =  Business.create!(name: 'The Mill', address: "736 Divisadero St San Francisco, CA 94117", phone: '(415) 345-1953', url: "themillsf.com", price: 2)
+businesses << the_mill
+
+
+Category.destroy_all
+categories = []
+cafe = Category.create!(title: 'cafe')
+categories << cafe
+bubble_tea = Category.create!(title: 'bubble tea')
+categories << bubble_tea
+hotel = Category.create!(title: 'hotel')
+categories << hotel
+tea = Category.create!(title: 'tea')
+categories << tea
+chinese = Category.create!(title: 'chinese')
+categories << chinese
+spa = Category.create!(title: 'spa')
+categories << spa
+gym = Category.create!(title: 'gym')
+
+Categorizing.destroy_all
+categorizings = []
+bubble_tea_boba_guys = Categorizing.create!(category_id: bubble_tea.id, business_id: boba_guys.id)
+categorizings << bubble_tea_boba_guys
+bubble_tea_steap_tea = Categorizing.create!(category_id: bubble_tea.id, business_id: steap_tea.id)
+categorizings << bubble_tea_steap_tea
+bubble_tea_black_sugar = Categorizing.create!(category_id: bubble_tea.id, business_id: black_sugar.id)
+categorizings << bubble_tea_black_sugar
+bubble_tea_asha_tea = Categorizing.create!(category_id: bubble_tea.id, business_id: asha_tea.id)
+categorizings << bubble_tea_asha_tea
+cafe_karma_cafe = Categorizing.create!(category_id: cafe.id, business_id: hollow.id)
+categorizings << cafe_karma_cafe
+cafe_hollow = Categorizing.create!(category_id: cafe.id, business_id: karma_cafe.id)
+categorizings << bubble_tea_steap_tea
+cafe_the_mill = Categorizing.create!(category_id: cafe.id, business_id: the_mill.id)
+categorizings << cafe_the_mill
