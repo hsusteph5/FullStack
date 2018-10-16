@@ -27,9 +27,9 @@ class CategoriesIndex extends React.Component {
   render() {
     return (
       <div className="background-search-icons">
-        <div className="search-icons-container" onClick={this.searchBusinesses('tea')}>
+        <div className="search-icons-container" onClick={this.searchBusinesses('coffee & tea')}>
           <i className="fas fa-coffee"></i>
-          <button className="search-icon-button">Tea</button>
+          <button className="search-icon-button">Coffee & Tea</button>
         </div>
         <div className="search-icons-container" onClick={this.searchBusinesses('cafe')}>
           <i className="fas fa-store"></i>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import yip from '../../../app/assets/images/yip-logo.png';
+import signup_illustration from '../../../app/assets/images/signup_illustration.png'
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -126,7 +127,7 @@ class SessionForm extends React.Component {
               </form>
             </div>
 
-            <img src="https://s3-media4.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="illustration"></img>
+            <img src={signup_illustration} alt="illustration"></img>
 
           </div>
 
