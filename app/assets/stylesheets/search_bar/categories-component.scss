@@ -1,5 +1,4 @@
 .background-search-icons {
-  margin-top: 10px;
   color: white;
   width: inherit;
   // height: 45px;
@@ -38,7 +37,48 @@
 .search-icon-button:focus {
   outline: none;
 }
-// 
-// .background-categories-container {
-//   background: green;
-// }
+//css for the categories appears in the business page
+.background-categories-container {
+  width: 990px;
+  margin: auto;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.background-categories-container .background-search-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.background-categories-container .search-icon-button {
+  font-weight: 500;
+  color: #323232;
+}
+
+.background-categories-container .search-icons-container {
+  border-right: 1px solid #e6e6e6;
+  color: #323232;;
+}
+
+
+.background-categories-container .search-icons-container:first-of-type {
+  border-left: 1px solid #e6e6e6;
+}
+
+.background-categories-container .categories-write-review {
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: none;
+  width: 200px;
+  background: white;
+  font-weight: 500;
+  color: #323232;
+  font-size: 14px;
+}
+
+.fa-pencil-alt {
+  padding-right: 10px;
+}
