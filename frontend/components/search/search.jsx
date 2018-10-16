@@ -57,15 +57,3 @@ class Search extends React.Component {
 
 const SearchWithRouter = withRouter(Search);
 export default SearchWithRouter;
-
-// <div className="background-search-icons">
-//   <div className="search-icons-container">
-//     <i className="fas fa-coffee"></i>
-//     <button className="search-icon-button">Tea</button>
-//   </div>
-//   <div className="search-icons-container">
-//     <i className="fas fa-store"></i>
-//     <button className="search-icon-button">Cafe</button>
-//   </div>
-//
-// </div>
