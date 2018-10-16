@@ -11,7 +11,6 @@ class DropDownContent extends React.Component {
 
 
   logoutClose() {
-    // debugger;
     this.props.closeModal();
     this.props.logout();
   }

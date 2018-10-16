@@ -28,7 +28,7 @@ class Search extends React.Component {
       height: this.props.height,
       fontSize: this.props.fontsize
     }
-    
+
     return (<div className="search-fields-container">
 
       <div className="input-border-box" style={style}>
@@ -37,7 +37,7 @@ class Search extends React.Component {
 
         <input type="text"
           className="search-bar"
-          placeholder="cafes, tea, hotels..."
+          placeholder="cafes, tea, desserts..."
           onChange={this.updateSearch}
           value = {this.state.name}
         >

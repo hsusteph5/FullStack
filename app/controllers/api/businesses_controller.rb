@@ -1,13 +1,16 @@
 class Api::BusinessesController < ApplicationController
   def index
     #name is
+    # debugger;
     name = params[:businesses][:name].downcase
     #find category based on what someone inputted
     @category = Category.find_by(title: name)
     #if the category exists
     if @category
       #find all associated businesses
-      @businesses = @category.businesses
+      #
+      # @categories = @businesses.categories
+      @businesses = @category.businesses.includes(:categories)
     else
       @businesses = Business.where("name ilike ?", "%#{name}%")
     end
