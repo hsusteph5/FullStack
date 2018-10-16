@@ -12,3 +12,10 @@ export const fetchBusinesses = (businesses) => {
       .then(businesses => dispatch(requestBusiness(businesses)))
   }
 }
+
+export const fetchBusiness = (id) => {
+  return dispatch => {
+    return BusinessAPI.fetchBusinesses(id)
+      .then(businesses => dispatch(requestBusiness(businesses)))
+  }
+}
