@@ -2,7 +2,6 @@ import React from 'react';
 import tea from '../../../app/assets/images/tea.jpg';
 import { withRouter } from "react-router";
 import titleize  from 'titleize';
-import querySearch from 'stringquery';
 
 class BusinessesIndexItems extends React.Component {
 
