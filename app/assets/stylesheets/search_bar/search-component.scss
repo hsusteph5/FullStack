@@ -20,17 +20,19 @@ input.search-bar:focus {
   // box-sizing: border-box;
   width: 960px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 
 .input-border-box {
-  box-sizing: border-box;
+  // box-sizing: border-box;
   // height: 45px;
   display: flex;
   flex-direction: row;
-  width: 1060px;
+  // width: 1060px;
+  width: inherit;
 }
 
 .search-bar {

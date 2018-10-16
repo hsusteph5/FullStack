@@ -60,32 +60,40 @@ class BusinessesIndexItems extends React.Component {
     );
   }
 
+
+//on the Click of the category
+//1. fetches the businesses (associated with the category)
+//2. pushes to the new path
+  searchBusinesses(category){
+    return (e) => {
+      e.preventDefault();
+      this.setState({name: category});
+      this.props.fetchBusinesses(this.state)
+        .then(() => this.props.history.push(
+          { pathname:'/businesses', search: `?name=${category}`}
+        ));
+    }
+  }
+
   //creating a function that will render all the categories
   businessCategories(categories){
+    // debugger;
     return categories.map((category, idx) => {
       if(idx !== categories.length - 1) {
         return (
           <li key={idx} className="businessCategories" onClick={this.searchBusinesses(category)}>
             { titleize(category) },
           </li>);
-      } else {
-        return (
-          <li key={idx} className="businessCategories" onClick={this.searchBusinesses(category)}>
-            { titleize(category) }
-          </li>);
-      }
+        } else {
+          return (
+            <li key={idx} className="businessCategories" onClick={this.searchBusinesses(category)}>
+              { titleize(category) }
+            </li>);
+          }
+        }
+      );
     }
-    );
-  }
 
-  searchBusinesses(category){
-    return (e) => {
-      e.preventDefault();
-      this.setState({name: category})
-      this.props.fetchBusinesses(this.state)
-        .then(() => this.props.history.push({pathname:'/businesses', search: `?name=${category}`}));
-    }
-  }
 
   render() {
     this.business = this.props.business
@@ -94,8 +102,6 @@ class BusinessesIndexItems extends React.Component {
         <div className="business-index-items-container">
 
           <img src={tea}></img>
-
-
 
           <div className="main-businesses">
             <h2> { this.business.name } </h2>

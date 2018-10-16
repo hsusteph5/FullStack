@@ -2,7 +2,7 @@ import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import yip from '../../../app/assets/images/yip-logo.png';
 import SearchContainer from '../search/search_container';
-
+import CategoriesContainer from '../search/categories_container';
 
 class Splash extends React.Component {
   render (){
@@ -17,6 +17,9 @@ class Splash extends React.Component {
 
                 <img className="logo-splash" src={yip}></img>
                 <SearchContainer height="45px" fontsize="20px"/>
+
+                <CategoriesContainer />
+                
                 <footer className="credits">
                   <p>Photo Credits Photo by Roman Kraft on Unsplash</p>
                 </footer>

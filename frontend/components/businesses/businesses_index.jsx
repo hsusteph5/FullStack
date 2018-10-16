@@ -1,8 +1,8 @@
 import React from 'react';
 import BusinessesIndexItems from './businesses_index_items';
-import querySearch from 'stringquery';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import BestInSF from './best_in_SF';
+import CategoriesContainer from '../search/categories_container';
 
 class BusinessesIndex extends React.Component {
   constructor(props) {
@@ -13,19 +13,27 @@ class BusinessesIndex extends React.Component {
       name: ""
     }
 
-    this.fetchBusinesses = this.fetchBusinesses.bind(this);
+    this.parseFetchBusiness = this.parseFetchBusiness.bind(this);
+    this.parseSearch = this.parseSearch.bind(this);
   }
 
+  //parses the params after the = sign
+  parseSearch(params){
+    let equalIdx = params.indexOf('=');
+    return params.slice(equalIdx + 1);
+  }
 
-//Why use componentDidMount vs COmponent did update??
-  fetchBusinesses() {
+//when the url reached is not the same as the previous url saved, fetch new businesses
+  parseFetchBusiness() {
     if(this.state.query !== this.props.location.search) {
+      // debugger;
       let searchParams = this.props.location.search;
       //searchQuery will parse out the name into a { name: 'tea'}
-      let params = querySearch(searchParams);
+      let parseParams = this.parseSearch(searchParams);
 
       //decode URI parses out of the white spaces %20
-      let decodeParams = decodeURI(params.name);
+      let decodeParams = decodeURI(parseParams);
+      //save the query string into the local state and save the category into the local state 
       this.setState({query: searchParams, name: decodeParams});
 
       //since you are not visiting a new route, you need to see if the current params looks
@@ -34,38 +42,32 @@ class BusinessesIndex extends React.Component {
     }
   }
 
-
   componentDidMount() {
-    this.fetchBusinesses();
+    this.parseFetchBusiness();
   }
 
 
   componentDidUpdate() {
-    this.fetchBusinesses();
+    this.parseFetchBusiness();
   }
 
-
-
-//need to pass down the fetchBusinesses into this prop
-  searchBusinesses(e){
-    e.preventDefault();
-    let state = this.state;
-    this.props.fetchBusinesses(this.state)
-      .then(() => this.props.history.push({pathname:'/businesses', search: `?name=${state.name}`}));
-  }
-
-
+//pass down this.props.fetchBusinesses down to the index-items so that
+//the index-items can fetchBusinesses upon calling searchBusinesses
   render() {
     let businessName = this.props.businesses.map(
       business => <BusinessesIndexItems key={business.id} business={business} fetchBusinesses={this.props.fetchBusinesses}/>
     );
     return (
       <div>
+
         <div className="business-nav-background">
           <div className="business-nav-container">
             <NavBarContainer />
-
           </div>
+        </div>
+
+        <div className="background-categories-container">
+          <CategoriesContainer />
         </div>
 
         <div className="best-in-SF-background">
