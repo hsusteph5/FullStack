@@ -3,6 +3,8 @@ import BusinessesIndexItems from './businesses_index_items';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import BestInSF from './best_in_SF';
 import CategoriesContainer from '../search/categories_container';
+import { parseSearch } from '../../util/parsing_manager.jsx';
+
 
 class BusinessesIndex extends React.Component {
   constructor(props) {
@@ -14,13 +16,6 @@ class BusinessesIndex extends React.Component {
     }
 
     this.parseFetchBusiness = this.parseFetchBusiness.bind(this);
-    this.parseSearch = this.parseSearch.bind(this);
-  }
-
-  //parses the params after the = sign
-  parseSearch(params){
-    let equalIdx = params.indexOf('=');
-    return params.slice(equalIdx + 1);
   }
 
 //when the url reached is not the same as the previous url saved, fetch new businesses
@@ -29,7 +24,7 @@ class BusinessesIndex extends React.Component {
       // debugger;
       let searchParams = this.props.location.search;
       //searchQuery will parse out the name into a { name: 'tea'}
-      let parseParams = this.parseSearch(searchParams);
+      let parseParams = parseSearch(searchParams);
 
       //decode URI parses out of the white spaces %20
       let decodeParams = decodeURI(parseParams);
@@ -90,12 +85,5 @@ class BusinessesIndex extends React.Component {
     );
   }
 }
-
-// <div className="business-nav-background">
-//   <div className="business-nav-container">
-//     <NavBarContainer />
-//   </div>
-// </div>
-//
 
 export default BusinessesIndex;

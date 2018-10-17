@@ -38,7 +38,7 @@ class Search extends React.Component {
 
           <input type="text"
             className="search-bar"
-            placeholder="cafes, tea, desserts..."
+            placeholder="cafe, tea, dessert..."
             onChange={this.updateSearch}
             value = {this.state.name}
           >

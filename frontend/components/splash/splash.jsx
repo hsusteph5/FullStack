@@ -23,6 +23,7 @@ class Splash extends React.Component {
 
                 <div className="photo-credits">
                   <p>Photo Credits Photo by Roman Kraft on Unsplash</p>
+
                 </div>
 
 
@@ -35,6 +36,9 @@ class Splash extends React.Component {
             <h3> Credits </h3>
             <ul>
               <li><p> Photo by rawpixel on Unsplash </p></li>
+              <li><p>Photo by Kaylah Otto on Unsplash</p></li>
+              <li><p>Photo by Oscar Nord on Unsplash</p></li>
+              <li><p>Photo by Pille-Riin Priske on Unsplash</p></li>
             </ul>
           </div>
 

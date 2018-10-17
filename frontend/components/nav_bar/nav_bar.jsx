@@ -50,6 +50,13 @@ class NavBar extends React.Component {
             <li className="user-icon">
                 <img onClick = {() => this.props.openModal('dropdown')} src={icon}></img>
             </li>
+            <li>
+
+              <div className='dropdown-button'>
+                <i className="fas fa-sort-down"></i>
+              </div>
+
+            </li>
         </ul>
       );
 

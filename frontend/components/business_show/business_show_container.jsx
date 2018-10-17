@@ -4,7 +4,6 @@ import { fetchBusiness } from '../../actions/business_actions';
 import BusinessShow from './business_show'
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger;
   let int = parseInt(ownProps.match.params.businessId);
   return { business: state.entities.businesses[int]}
 }

@@ -1,7 +1,5 @@
 class Api::BusinessesController < ApplicationController
   def index
-    #name is
-    # debugger;
     name = params[:businesses][:name].downcase
     #find category based on what someone inputted
     @category = Category.find_by(title: name)
@@ -28,6 +26,3 @@ class Api::BusinessesController < ApplicationController
     params.require(:businesses).permit(:name)
   end
 end
-
-# retrieval by url
-# http://localhost:3000/api/businesses?businesses[name]=boba

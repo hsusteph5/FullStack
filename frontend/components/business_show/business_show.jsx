@@ -2,46 +2,21 @@ import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import CategoriesContainer from '../search/categories_container';
 import titleize  from 'titleize';
+import { createStars, parsingPrice, businessCategories, parsingCity, parsingStreet } from '../../util/parsing_manager.jsx'
+import sandwich from '../../../app/assets/images/sandwich.png';
+import drinkingCoffee from '../../../app/assets/images/drinking-coffee.png';
+import cafeFront from '../../../app/assets/images/cafe-front.png';
+import googleMap from '../../../app/assets/images/google-map.png';
 
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
-    this.createStars = this.createStars.bind(this);
-    this.parsingPrice = this.parsingPrice.bind(this);
     this.businessCategories = this.businessCategories.bind(this);
-  }
-
-  createStars() {
-    return (
-      <div className="businesses-stars-reviews">
-
-        <div className="user-star">
-          <i className="fas fa-star"></i>
-        </div>
-        <div className="user-star">
-          <i className="fas fa-star"></i>
-        </div>
-        <div className="user-star">
-          <i className="fas fa-star"></i>
-        </div>
-        <div className="user-star">
-          <i className="fas fa-star"></i>
-        </div>
-
-      </div>
-    );
-  }
-
-  parsingPrice(int) {
-    let priceStr = ""
-    for(let i = 0; i < int; i++) {
-      priceStr += "$";
-    }
-    return priceStr;
+    this.createDollars = this.createDollars.bind(this);
+    this.createDollarWords = this.createDollarWords.bind(this);
   }
 
   businessCategories(categories){
-    // debugger;
     return categories.map((category, idx) => {
       if(idx !== categories.length - 1) {
         return (
@@ -63,17 +38,103 @@ class BusinessShow extends React.Component {
     this.props.fetchBusiness(int);
   }
 
+  createDollars() {
+    if(this.props.business.price === 1) {
+      return (
+        <li>
+          <i className="fas fa-dollar-sign green-dollar"></i>
+          <i className="fas fa-dollar-sign grey-dollar"></i>
+          <i className="fas fa-dollar-sign grey-dollar"></i>
+          <i className="fas fa-dollar-sign grey-dollar"></i>
+        </li>
+      );
+    } else if (this.props.business.price === 2){
+      return (
+        <li>
+          <i className="fas fa-dollar-sign green-dollar"></i>
+          <i className="fas fa-dollar-sign green-dollar"></i>
+          <i className="fas fa-dollar-sign grey-dollar"></i>
+          <i className="fas fa-dollar-sign grey-dollar"></i>
+        </li>
+      );
+    } if(this.props.business.price === 3) {
+      return (
+        <li>
+          <i className="fas fa-dollar-sign green-dollar"></i>
+          <i className="fas fa-dollar-sign green-dollar"></i>
+          <i className="fas fa-dollar-sign green-dollar"></i>
+          <i className="fas fa-dollar-sign grey-dollar"></i>
+        </li>
+      );
+    } else if (this.props.business.price === 4){
+      return (
+        <li>
+          <i className="fas fa-dollar-sign green-dollar"></i>
+          <i className="fas fa-dollar-sign green-dollar"></i>
+          <i className="fas fa-dollar-sign green-dollar"></i>
+          <i className="fas fa-dollar-sign green-dollar"></i>
+        </li>
+      );
+    }
+  }
+
+
+  createDollarWords() {
+    if(this.props.business.price === 1) {
+      return (
+        <li>
+          <span>Price Range <span className="bold-health">Over $10</span></span>
+        </li>
+      );
+    } else if (this.props.business.price === 2){
+      return (
+        <li>
+          <span>Price Range <span className="bold-health">$11-30</span></span>
+        </li>
+      );
+    } if(this.props.business.price === 3) {
+      return (
+        <li>
+          <span>Price Range <span className="bold-health">$31-60</span></span>
+        </li>
+      );
+    } else if (this.props.business.price === 4){
+      return (
+        <li>
+          <span>Price Range <span className="bold-health">Above $61</span></span>
+        </li>
+      );
+    }
+  }
+
   render() {
-    let businessInfo = (this.props.business) ? (
-      <div>
-        <ul className="business-show-info">
-          <li><h1>{this.props.business.name}</h1></li>
-          <li>{this.createStars()}</li>
-          <li>{this.parsingPrice(this.props.business.price)}</li>
-          {this.businessCategories(this.props.business.categories)}
+    let businessInfo;
+    let businessAddress;
+    let dollars;
+    let dollarsInfo;
+    if (this.props.business){
+      dollars = this.createDollars();
+      dollarsInfo = this.createDollarWords();
+      businessInfo = (
+        <div>
+          <ul className="business-show-list">
+            <li><h1>{this.props.business.name}</h1></li>
+            <li>{createStars()}</li>
+            <li className="business-price">{parsingPrice(this.props.business.price)}</li>
+            {this.businessCategories(this.props.business.categories)}
+          </ul>
+        </div>
+      );
+      businessAddress = (
+        <ul>
+          <li><img src={googleMap}></img></li>
+          <li className="show-address"><i className="fas fa-map-marker-alt"></i>{parsingStreet(this.props.business.address)}</li>
+          <li className="show-address">{parsingCity(this.props.business.address)}</li>
+          <li className="show-phone"><i className="fas fa-phone"></i>{this.props.business.phone}</li>
+          <li className="show-link"><i className="fas fa-external-link-alt"></i><a target="_blank" href={`http://${this.props.business.url}`}>{this.props.business.url}</a></li>
         </ul>
-      </div>
-    ): ("")
+      );
+    }
     return (
       <div>
         <div className="business-nav-background">
@@ -93,14 +154,60 @@ class BusinessShow extends React.Component {
 
 
         <div className="background-business-show-info-container">
-          <div className="business-show-info-container">
+          <div className="business-show-header">
 
-            { businessInfo }
-            <button>Write a Review</button>
+            <div className="business-show-info-container">
+              <div className="business-show-info">
+                { businessInfo }
+              </div>
+              <button className="business-show-review"><i className="fas fa-star"></i>Write a Review</button>
+
+            </div>
+
+            <div className="show-images-reel">
+              <div className="business-address">
+                { businessAddress }
+
+              </div>
+              <img src={ sandwich }></img>
+              <img src={ drinkingCoffee }></img>
+              <img src={ cafeFront }></img>
+            </div>
+
+
+
+          </div>
+        </div>
+
+        <div className="show-page-content-margin">
+          <div className="show-page-content-container">
+            <div>
+              <p> Reviews go here!</p>
+            </div>
+            <div className="health-score-info">
+              <ul className="health-icon-list">
+                <li><i className="far fa-clock"></i></li>
+                <li><i class="fas fa-utensils"></i></li>
+                { dollars }
+                <li><i className="far fa-plus-square"></i></li>
+
+              </ul>
+              <ul className="health-icon-list-info">
+                <li><span>Today <span className="bold-health">12:00pm - 10:00pm</span></span></li>
+                <li><span className="bold-health blue-health">Full Menu</span></li>
+                { dollarsInfo }
+                <li><span><span className="bold-health blue-health">Health Score</span> 100 out of 100</span></li>
+
+
+              </ul>
+            </div>
+
+
           </div>
 
 
         </div>
+
       </div>
     );
   }

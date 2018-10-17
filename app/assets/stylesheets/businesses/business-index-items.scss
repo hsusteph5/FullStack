@@ -24,7 +24,7 @@
   margin-bottom: 5px;
 }
 
-.main-businesses > h2 {
+.main-businesses > h2 > a{
   font-weight: 700;
   color: #0073bb;
   display: block;
@@ -71,6 +71,7 @@ ul.business-index-items-info {
 }
 
 .businesses-stars-reviews > .user-star {
+  height: 17px;
   width: 17px;
   padding: 1px;
   margin-right: 3px;
@@ -82,10 +83,6 @@ ul.business-index-items-info {
   font-size: 14px;
 }
 
-// li.business-circle {
-//   display: flex;
-//   vertical-align: center;
-// }
 
 .fa-circle {
   font-size: 3px;

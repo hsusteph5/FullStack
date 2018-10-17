@@ -15,14 +15,14 @@ class DropDownContent extends React.Component {
     this.props.logout();
   }
 
+  // <div className='dropdown-button'>
+  //   <i className="fas fa-sort-down"></i>
+  // </div>
   render() {
     return (
       <div>
         <div className="dropdown-container">
 
-          <div className='dropdown-button'>
-            <i className="fas fa-sort-down"></i>
-          </div>
 
           <div className="dropdown-content">
 

@@ -2,6 +2,8 @@ import React from 'react';
 import tea from '../../../app/assets/images/tea.jpg';
 import { withRouter } from "react-router";
 import titleize  from 'titleize';
+import { parsingStreet, parsingCity, parsingPrice, createStars } from '../../util/parsing_manager.jsx';
+import { Link } from 'react-router-dom';
 
 class BusinessesIndexItems extends React.Component {
 
@@ -11,54 +13,9 @@ class BusinessesIndexItems extends React.Component {
       name: "",
       query: ""
     }
-    this.parsingStreet = this.parsingStreet.bind(this);
-    this.parsingCity = this.parsingCity.bind(this);
-    this.parsingPrice = this.parsingPrice.bind(this);
-    this.createStars = this.createStars.bind(this);
     this.businessCategories = this.businessCategories.bind(this);
     this.searchBusinesses = this.searchBusinesses.bind(this);
   }
-
-  parsingStreet(str){
-    let index = str.indexOf('San Francisco');
-    return str.slice(0, index);
-  }
-
-  parsingCity(str){
-    let index = str.indexOf('San Francisco');
-    return str.slice(index);
-  }
-
-  parsingPrice(int) {
-    let priceStr = ""
-    for(let i = 0; i < int; i++) {
-      priceStr += "$";
-    }
-    return priceStr;
-  }
-
-//place holder for create Stars
-  createStars() {
-    return (
-      <div className="businesses-stars-reviews">
-
-        <div className="user-star">
-          <i className="fas fa-star"></i>
-        </div>
-        <div className="user-star">
-          <i className="fas fa-star"></i>
-        </div>
-        <div className="user-star">
-          <i className="fas fa-star"></i>
-        </div>
-        <div className="user-star">
-          <i className="fas fa-star"></i>
-        </div>
-
-      </div>
-    );
-  }
-
 
 //on the Click of the category
 //1. fetches the businesses (associated with the category)
@@ -103,15 +60,15 @@ class BusinessesIndexItems extends React.Component {
           <img src={tea}></img>
 
           <div className="main-businesses">
-            <h2> { this.business.name } </h2>
+            <h2> <Link to={`/businesses/${this.business.id}`}>{ this.business.name } </Link></h2>
             <div className ="main-businesses-content">
 
               <div className="business-reviews-info">
 
 
-                <h3> { this.createStars()} </h3>
+                <h3> { createStars()} </h3>
                 <ul>
-                  <li>{ this.parsingPrice(this.business.price)}</li>
+                  <li>{ parsingPrice(this.business.price)}</li>
                   <li className="business-circle"> <i className="fas fa-circle"></i> </li>
                   { this.businessCategories(this.business.categories) }
                 </ul>
@@ -119,8 +76,8 @@ class BusinessesIndexItems extends React.Component {
               </div>
 
               <ul className="business-index-items-info">
-                <li> { this.parsingStreet(this.business.address) } </li>
-                <li> { this.parsingCity(this.business.address) } </li>
+                <li> { parsingStreet(this.business.address) } </li>
+                <li> { parsingCity(this.business.address) } </li>
                 <li> { this.business.phone } </li>
               </ul>
             </div>

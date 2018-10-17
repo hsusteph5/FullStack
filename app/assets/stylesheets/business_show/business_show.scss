@@ -4,13 +4,165 @@
 }
 
 .business-show-info-container {
-  width: 990px;
-  margin: 0 auto;
-  border-bottom: 1px solid #e6e6e6;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  // border-bottom: 1px solid grey;
 }
 
+.business-show-header{
+  width: 990px;
+  margin: 0 auto;
+}
 
 .business-show-info h1{
   font-size: 30px;
   font-weight: 700;
+}
+
+.business-price {
+  display: inline-block;
+  // padding-right: 10px;
+}
+
+.business-show-list li.businessCategories {
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.business-show-list li {
+  padding: 3px 3px;
+}
+
+.business-show-review {
+  background: #d32323;
+  border-radius: 3px;
+  border: 1px solid #323232;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.business-show-review:hover {
+  cursor: pointer;
+}
+
+.business-show-review > .fa-star {
+  color: white;
+  padding-right: 5px;
+  font-size: 15px;
+}
+
+.business-address {
+  background: white;
+  font-size: 12px;
+  padding: 5px;
+  border: 1px solid	#B8B8B8;
+  width: 300px;
+}
+
+.business-address i {
+  padding-right: 10px;
+  color: #686868;
+}
+
+.show-address {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.show-images-reel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.show-address, .show-phone, .show-link {
+  padding: 0px 5px;
+}
+
+.show-images-reel > img {
+  width: 230px;
+  height: 230px;
+}
+
+.show-images-reel > img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+  box-shadow: 5px 4px 8px -4px grey;
+}
+
+.show-page-content-margin {
+  width: 990px;
+  margin: 30px auto;
+}
+
+.show-page-content-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.health-score-info {
+  width: 300px;
+  padding: 5px;
+  border: 1px solid #B8B8B8;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  // justify-content: center;
+  font-size: 14px;
+}
+
+.health-icon-list li {
+  padding: 8px 0;
+}
+
+.health-score-info i {
+  font-size: 18px;
+  color: #323232;
+  padding-right: 10px;
+}
+
+.health-score-info i.fa-dollar-sign {
+  padding: 5px 0;
+}
+
+.health-icon-list {
+  text-align: center;
+}
+
+i.green-dollar {
+  font-size: 14px;
+  color: green;
+}
+
+i.grey-dollar {
+  font-size: 14px;
+  color: #B8B8B8;
+}
+
+.health-score-info i.fa-dollar-sign:last-of-type {
+  padding-right: 10px;
+}
+
+.health-icon-list-info li {
+  padding: 8px 0;
+  border-bottom: 1px solid #B8B8B8;
+}
+
+.health-icon-list-info li:last-of-type {
+  border-bottom: none;
+}
+
+.bold-health {
+  font-weight: 700;
+}
+
+.blue-health, .show-link a {
+  color: #0073bb
 }
