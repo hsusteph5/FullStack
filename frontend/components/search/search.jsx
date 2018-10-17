@@ -32,23 +32,25 @@ class Search extends React.Component {
     return (
       <div className="search-fields-container">
 
-        <div className="input-border-box" style={style}>
+        <form className="search-form" onSubmit={this.searchBusinesses}>
+          <div className="input-border-box" style={style}>
 
-          <div className="Find"><p>Find</p></div>
+              <div className="Find"><p>Find</p></div>
 
-          <input type="text"
-            className="search-bar"
-            placeholder="cafe, tea, dessert..."
-            onChange={this.updateSearch}
-            value = {this.state.name}
-          >
-          </input>
+              <input type="text"
+                className="search-bar"
+                placeholder="cafe, tea, dessert..."
+                onChange={this.updateSearch}
+                value = {this.state.name}
+                >
+              </input>
 
-          <div className="line"><p>|</p></div>
-          <div className="Near"><p>Near</p></div>
-          <input type="text" className="search-bar" placeholder="Financial District"></input>
-          <button className="search-icon" onClick={this.searchBusinesses}><i className="fas fa-search"></i></button>
+              <div className="line"><p>|</p></div>
+              <div className="Near"><p>Near</p></div>
+              <input type="text" className="search-bar" placeholder="Financial District"></input>
+              <button className="search-icon" type="submit"><i className="fas fa-search"></i></button>
         </div>
+      </form>
 
     </div>);
   }

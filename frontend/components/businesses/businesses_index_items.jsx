@@ -67,7 +67,7 @@ class BusinessesIndexItems extends React.Component {
 
 
                 <h3> { createStars()} </h3>
-                <ul>
+                <ul className="index-categories-list">
                   <li>{ parsingPrice(this.business.price)}</li>
                   <li className="business-circle"> <i className="fas fa-circle"></i> </li>
                   { this.businessCategories(this.business.categories) }

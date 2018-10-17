@@ -78,11 +78,21 @@ ul.business-index-items-info {
 }
 
 .business-reviews-info > ul > li {
-  display: inline-block;
-  padding-right: 3px;
+  // display: inline-block;
+  padding-right: 6px;
   font-size: 14px;
 }
 
+.index-categories-list {
+  display: flex;
+  vertical-align: center;
+}
+
+.business-circle {
+  display: flex;
+  align-items: center;
+  // padding: 0 5px;
+}
 
 .fa-circle {
   font-size: 3px;
