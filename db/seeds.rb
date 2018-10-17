@@ -12,6 +12,17 @@ User.destroy_all
 users = []
 demo = User.create!(email: 'demo@demo.com', password: 'password', fname: "Stephanie", lname: "Hsu")
 users << demo
+user1 = User.create!(email: 'pudding@demo.com', password: 'password', fname: "Giga", lname: "Pudding")
+users << user1
+user2 = User.create!(email: 'banana_pancake@demo.com', password: 'password', fname: "Banana", lname: "Pancakes")
+users << user2
+user3 = User.create!(email: 'sherry@demo.com', password: 'password', fname: "Sherry", lname: "Berry")
+users << user3
+user4 = User.create!(email: 'mochi@demo.com', password: 'password', fname: "Mochi", lname: "Mochi")
+users << user4
+
+
+
 
 #Business seeds
 Business.destroy_all
@@ -119,3 +130,14 @@ coffee_and_tea_asha_tea = Categorizing.create!(category_id: coffee_and_tea.id, b
 categorizings << coffee_and_tea_asha_tea
 coffee_and_tea_crown_crumpet = Categorizing.create!(category_id: coffee_and_tea.id, business_id: crown_crumpet.id)
 categorizings << coffee_and_tea_crown_crumpet
+
+#reviews
+reviews = []
+review1 = Review.create!(author_id: demo.id, business_id: boba_guys.id, rating: 5, description: 'You must try the strawberry green tea latte!')
+reviews << review1
+review2 = Review.create!(author_id: user1.id, business_id: boba_guys.id, rating: 3, description: 'The line was so long, I had to wait forever.')
+reviews << review2
+review3 = Review.create!(author_id: user2.id, business_id: boba_guys.id, rating: 5, description: `I love this place, it's a must-try`)
+reviews << review3
+review4 = Review.create!(author_id: user3.id, business_id: boba_guys.id, rating: 5, description: `Not sure what the other user was talking about, the line was so short when I went.`)
+reviews << review4 

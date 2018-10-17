@@ -28,6 +28,10 @@ class Business < ApplicationRecord
     through: :categorizings,
     source: :category
 
+  has_many :reviews,
+    foreign_key: :business_id,
+    class_name: :Review
+
   has_one_attached :photo
 
 end
