@@ -91,4 +91,11 @@ class BusinessesIndex extends React.Component {
   }
 }
 
+// <div className="business-nav-background">
+//   <div className="business-nav-container">
+//     <NavBarContainer />
+//   </div>
+// </div>
+//
+
 export default BusinessesIndex;
