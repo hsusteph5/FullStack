@@ -11,21 +11,36 @@ import googleMap from '../../../app/assets/images/google-map.png';
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      name: "",
+    }
     this.businessCategories = this.businessCategories.bind(this);
     this.createDollars = this.createDollars.bind(this);
     this.createDollarWords = this.createDollarWords.bind(this);
+    this.searchBusinesses = this.searchBusinesses.bind(this);
+  }
+  //fetches the business by category
+  //then pushes to the new url
+  //must fetch the business {name: category}
+  searchBusinesses(category){
+    return (e) => {
+      e.preventDefault();
+      this.setState({name: category});
+      this.props.fetchBusinesses(this.state)
+      .then(() => this.props.history.push({pathname:'/businesses', search: `?name=${this.state.name}`}));
+    }
   }
 
   businessCategories(categories){
     return categories.map((category, idx) => {
       if(idx !== categories.length - 1) {
         return (
-          <li key={idx} className="businessCategories">
+          <li key={idx} className="businessCategories" onClick={this.searchBusinesses(category)}>
             { titleize(category) },
           </li>);
         } else {
           return (
-            <li key={idx} className="businessCategories">
+            <li key={idx} className="businessCategories" onClick={this.searchBusinesses(category)}>
               { titleize(category) }
             </li>);
           }
@@ -187,7 +202,7 @@ class BusinessShow extends React.Component {
             <div className="health-score-info">
               <ul className="health-icon-list">
                 <li><i className="far fa-clock"></i></li>
-                <li><i class="fas fa-utensils"></i></li>
+                <li><i className="fas fa-utensils"></i></li>
                 { dollars }
                 <li><i className="far fa-plus-square"></i></li>
 
