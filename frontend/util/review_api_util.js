@@ -10,3 +10,4 @@ export const createReview = (review) => {
 
 
 // review: {description: 'love this place!', rating: 5, business_id: 5}
+// review will be passed with the business id so that the ajax request can find it

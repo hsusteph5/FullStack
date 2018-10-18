@@ -11,5 +11,6 @@ export const createReview = (review) => {
   return dispatch => {
     return ReviewAPI.createReview(review)
       .then(review => dispatch(receiveReview(review)))
+      // .then(errors)
   }
 }

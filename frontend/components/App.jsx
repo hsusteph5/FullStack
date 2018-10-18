@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import LoginFormContainer from './user_auth_form/login_form_container';
 import SignupFormContainer from './user_auth_form/signup_form_container';
@@ -19,7 +19,7 @@ const App = () => (
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
       <Route exact path='/businesses' component={BusinessesContainer} />
       <Route exact path ='/businesses/:businessId' component={BusinessShowContainer}/>
-      <Route exact path ='/businesses/:businessId/writeareview' component={ReviewFormContainer}/>
+      <ProtectedRoute exact path ='/businesses/:businessId/writeareview' component={ReviewFormContainer}/>
       <Route exact path="/"component={Splash} />
       <Redirect push to="/" />
     </Switch>

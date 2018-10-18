@@ -9,6 +9,8 @@ import cafeFront from '../../../app/assets/images/cafe-front.png';
 import googleMap from '../../../app/assets/images/google-map.png';
 import ReviewIndex from '../review/review_index';
 
+// import { Link } from 'react-router-dom';
+
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -20,6 +22,7 @@ class BusinessShow extends React.Component {
     this.createDollars = this.createDollars.bind(this);
     this.createDollarWords = this.createDollarWords.bind(this);
     this.searchBusinesses = this.searchBusinesses.bind(this);
+    this.reviewForm = this.reviewForm.bind(this);
   }
   //fetches the business by category
   //then pushes to the new url
@@ -124,6 +127,12 @@ class BusinessShow extends React.Component {
     }
   }
 
+  reviewForm(e){
+    // debugger;
+    e.preventDefault;
+    this.props.history.push(`/businesses/${this.props.business.id}/writeareview`);
+  }
+
   render() {
     // debugger;
     let businessInfo;
@@ -170,9 +179,9 @@ class BusinessShow extends React.Component {
 
         <div className="background-categories-container">
           <CategoriesContainer />
-          <button className="categories-write-review">
-            <i className="fas fa-pencil-alt"></i>
-            Write a Review
+          <button className="categories-write-review" onClick={this.reviewForm}>
+              <i className="fas fa-pencil-alt"></i>
+              Write a Review
           </button>
         </div>
 
@@ -184,7 +193,7 @@ class BusinessShow extends React.Component {
               <div className="business-show-info">
                 { businessInfo }
               </div>
-              <button className="business-show-review"><i className="fas fa-star"></i>Write a Review</button>
+              <button className="business-show-review" onClick={this.reviewForm}><i className="fas fa-star"></i>Write a Review</button>
 
             </div>
 
