@@ -5,7 +5,7 @@ import merge from 'lodash/merge';
 const businessesReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_BUSINESSES:
-      return action.businesses;
+      return action.payload.businesses;
     case RECEIVE_BUSINESS:
       let newState = merge({}, state, action.payload.businesses);
       return newState;

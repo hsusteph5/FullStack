@@ -3,8 +3,8 @@ export const RECEIVE_BUSINESSES = "RECEIVE_BUSINESSES";
 export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
 
 //thunk action for all businesses by a filter
-export const receiveBusinesses = (businesses) => {
-  return { type: RECEIVE_BUSINESSES, businesses: businesses}
+export const receiveBusinesses = (payload) => {
+  return { type: RECEIVE_BUSINESSES, payload: payload}
 }
 
 
@@ -16,7 +16,7 @@ export const receiveBusiness = (payload) => {
 export const fetchBusinesses = (businesses) => {
   return dispatch => {
     return BusinessAPI.fetchBusinesses(businesses)
-      .then(businesses => dispatch(receiveBusinesses(businesses)))
+      .then(payload => dispatch(receiveBusinesses(payload)))
   }
 }
 
