@@ -8,7 +8,7 @@ class Api::ReviewsController < ApplicationController
     if @review.save
       # render json: 'api/reviews/review'
     else
-      render json: ['Invalid review entry']
+      render json: @review.errors.full_messages, status: 401
     end
   end
 

@@ -36,20 +36,32 @@ class ReviewForm extends React.Component {
 
 
 //handles the actual creation of the post
+//needs to push based on the url on top or else it will push with what ever is in the store
   submitReview(e){
     e.preventDefault();
     this.props.createReview(this.state)
       // .then(res => console.log(res))
-      .then(review => this.props.history.push(`/businesses/${this.props.business.id}`));
+      .then(review => this.props.history.push(`/businesses/${this.props.match.params.businessId}`));
   }
 
   render(){
     //need to check if the business exists before displaying it
     let name;
+    let errors;
     if (this.props.business){
       name = (
         <h1>{this.props.business.name}</h1>
       );
+
+
+    }
+    // debugger;
+    if(this.props.errors) {
+      errors = (
+        <ul className="errors-create-review-form">
+           { this.props.errors.map((error, idx) => <li key={idx} className="create-review-form-error"> { error }</li>) }
+        </ul>
+      )
     }
     // debugger;
     return(
@@ -84,7 +96,11 @@ class ReviewForm extends React.Component {
           </div>
         </div>
 
+
         <div className="create-review-form-background">
+          <div>
+            { errors }
+          </div>
 
           { name }
           <form className="create-review-form-container">

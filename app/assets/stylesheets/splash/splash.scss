@@ -60,24 +60,31 @@ footer.credits {
 footer.credits img {
   width: 800px;
 }
-
+.all-credits {
+  width: 990px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .all-credits p {
   font-size: 14px;
   color: #0073bb;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  margin: 0px;
+  text-align: left;
 }
 
-.all-credits > h3 {
-  // text-align: left;
+.all-credits h3 {
+  text-align: center;
   font-weight: 700;
   color: #CC0000;
 }
 
-.all-credits ul {
-  // background: black;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-start;
+.all-credits i {
+  color: #0073bb;
+  padding: 0 10px;
+}
+
+.all-credits a {
+  color: #0073bb;
 }

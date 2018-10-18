@@ -33,15 +33,31 @@ class Splash extends React.Component {
         </div>
         <footer className="credits">
           <div className="all-credits">
-            <h3> Credits </h3>
-            <ul>
-              <li><p> Photo by rawpixel on Unsplash </p></li>
-              <li><p>Photo by Kaylah Otto on Unsplash</p></li>
-              <li><p>Photo by Oscar Nord on Unsplash</p></li>
-              <li><p>Photo by Pille-Riin Priske on Unsplash</p></li>
-            </ul>
-            <img src={cityscape_illustration} alt="cityscape_illustration"></img>
+            <div className="all-photo-credits">
+              <h3> Photo Credits </h3>
+              <ul>
+                <li><p> Photo by rawpixel on Unsplash </p></li>
+                <li><p>Photo by Kaylah Otto on Unsplash</p></li>
+                <li><p>Photo by Oscar Nord on Unsplash</p></li>
+                <li><p>Photo by Pille-Riin Priske on Unsplash</p></li>
+              </ul>
+            </div>
+
+            <div className="about-stephanie">
+              <h3> About Me </h3>
+              <ul>
+                <li><i className="fab fa-github"></i>
+                  <a href="https://github.com/hsusteph5/YipGithub">Github</a>
+                </li>
+
+                <li><i className="fab fa-linkedin-in"></i>
+                  <a href="https://www.linkedin.com/in/stephanie-hsu-43847b88/">LinkedIn</a>
+                </li>
+              </ul>
+            </div>
           </div>
+
+          <img src={cityscape_illustration} alt="cityscape_illustration"></img>
 
         </footer>
       </div>

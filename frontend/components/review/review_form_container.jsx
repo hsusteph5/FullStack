@@ -12,12 +12,13 @@ const mapStateToProps = (state, ownProps) => {
   let business = Object.values(state.entities.businesses)[0]
   return {
     business: business,
-    business_id: parseBusinessId
+    business_id: parseBusinessId,
+    errors: state.errors.review
   };
 };
 
 
-//fetching Business is fetched with the business id keyed as the business 
+//fetching Business is fetched with the business id keyed as the business
 const mapDispatchToProps = (dispatch) => {
   return {
     createReview: (review) => dispatch(createReview(review)),
