@@ -50,7 +50,14 @@ class BusinessesIndex extends React.Component {
 //the index-items can fetchBusinesses upon calling searchBusinesses
   render() {
     let businessName = this.props.businesses.map(
-      business => <BusinessesIndexItems key={business.id} business={business} fetchBusinesses={this.props.fetchBusinesses}/>
+      business =>
+        <BusinessesIndexItems
+          key={business.id}
+          business={business}
+          fetchBusinesses={this.props.fetchBusinesses}
+          fetchBusiness={this.props.fetchBusiness}
+          reviews={this.props.reviews}
+        />
     );
     return (
       <div>

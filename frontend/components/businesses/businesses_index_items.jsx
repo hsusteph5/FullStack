@@ -2,7 +2,7 @@ import React from 'react';
 import tea from '../../../app/assets/images/tea.jpg';
 import { withRouter } from "react-router";
 import titleize  from 'titleize';
-import { parsingStreet, parsingCity, parsingPrice, createStars } from '../../util/parsing_manager.jsx';
+import { parsingStreet, parsingCity, parsingPrice, createRatingStars } from '../../util/parsing_manager.jsx';
 import { Link } from 'react-router-dom';
 
 class BusinessesIndexItems extends React.Component {
@@ -15,6 +15,7 @@ class BusinessesIndexItems extends React.Component {
     }
     this.businessCategories = this.businessCategories.bind(this);
     this.searchBusinesses = this.searchBusinesses.bind(this);
+    this.redirectShow = this.redirectShow.bind(this);
   }
 
 //on the Click of the category
@@ -51,8 +52,26 @@ class BusinessesIndexItems extends React.Component {
     }
 
 
+//redirect to the show!
+    redirectShow(id){
+      return (e) => {
+        e.preventDefault();
+        this.props.fetchBusiness(id)
+          .then((payload) => {
+            // debugger;
+            let id = Object.keys(payload.payload.businesses)[0];
+            let parseId = parseInt(id);
+            this.props.history.push(`/businesses/${parseId}`)
+          });
+      }
+    }
+
+
   render() {
+    // debugger;
     this.business = this.props.business
+    let review = this.props.reviews[this.business.id];
+    if (review === undefined) return '';
     return (
       <div className="business-index-items">
         <div className="business-index-items-container">
@@ -60,13 +79,15 @@ class BusinessesIndexItems extends React.Component {
           <img src={tea}></img>
 
           <div className="main-businesses">
-            <h2> <Link to={`/businesses/${this.business.id}`}>{ this.business.name } </Link></h2>
+            <button onClick={this.redirectShow(this.business.id)}>{ this.business.name }</button>
             <div className ="main-businesses-content">
 
               <div className="business-reviews-info">
 
 
-                <h3> { createStars()} </h3>
+                <h3> { createRatingStars(this.business.avg_rating)}
+
+                </h3>
                 <ul className="index-categories-list">
                   <li>{ parsingPrice(this.business.price)}</li>
                   <li className="business-circle"> <i className="fas fa-circle"></i> </li>
@@ -83,8 +104,7 @@ class BusinessesIndexItems extends React.Component {
             </div>
 
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              In et lectus vitae metus euismod pretium in a urna. Fusce mi lacus,
+              {review.description}
             </p>
 
 
