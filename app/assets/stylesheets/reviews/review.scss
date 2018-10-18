@@ -1,0 +1,49 @@
+.review-index-container {
+  margin-right: 30px;
+}
+
+.business-review-container {
+  border-top: 1px solid #e6e6e6;
+  // width: 60%;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.review-description-container {
+  padding-top: 10px;
+  width: 60%;
+  color: #323232;
+  font-size: 14px;
+}
+
+.business-user-side-panel {
+  width: 40%;
+  display: flex;
+
+}
+
+.business-user-side-panel img {
+   border-radius: 3px;
+   margin-right: 7px;
+   height: 60px;
+   width: 60px;
+}
+
+.review-user-name {
+  font-weight: 700;
+  color: #0073bb;
+  font-size: 14px;
+}
+
+.review-city {
+  font-weight: 700;
+  color: #323232;
+  font-size: 12px;
+}
+
+.review-description-container .businesses-stars-reviews {
+  padding-bottom: 10px;
+}

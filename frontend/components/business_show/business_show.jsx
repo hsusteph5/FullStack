@@ -7,6 +7,8 @@ import sandwich from '../../../app/assets/images/sandwich.png';
 import drinkingCoffee from '../../../app/assets/images/drinking-coffee.png';
 import cafeFront from '../../../app/assets/images/cafe-front.png';
 import googleMap from '../../../app/assets/images/google-map.png';
+import ReviewIndex from '../review/review_index';
+
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -123,18 +125,25 @@ class BusinessShow extends React.Component {
   }
 
   render() {
+    // debugger;
     let businessInfo;
     let businessAddress;
     let dollars;
     let dollarsInfo;
+    let reviewIndex;
     if (this.props.business){
       dollars = this.createDollars();
       dollarsInfo = this.createDollarWords();
+      reviewIndex = (
+        <div>
+          <ReviewIndex users={this.props.users} reviews={this.props.reviews}/>
+        </div>
+      )
       businessInfo = (
         <div>
           <ul className="business-show-list">
             <li><h1>{this.props.business.name}</h1></li>
-            <li>{createStars()}</li>
+            <li className="show-stars-alignment">{createStars()}<span>{this.props.reviews.length} Reviews</span></li>
             <li className="business-price">{parsingPrice(this.props.business.price)}</li>
             {this.businessCategories(this.props.business.categories)}
           </ul>
@@ -144,7 +153,7 @@ class BusinessShow extends React.Component {
         <ul>
           <li><img src={googleMap}></img></li>
           <li className="show-address"><i className="fas fa-map-marker-alt"></i>{parsingStreet(this.props.business.address)}</li>
-          <li className="show-address">{parsingCity(this.props.business.address)}</li>
+          <li className="show-address"><span className="extra-padding-marker"></span>{parsingCity(this.props.business.address)}</li>
           <li className="show-phone"><i className="fas fa-phone"></i>{this.props.business.phone}</li>
           <li className="show-link"><i className="fas fa-external-link-alt"></i><a target="_blank" href={`http://${this.props.business.url}`}>{this.props.business.url}</a></li>
         </ul>
@@ -196,33 +205,33 @@ class BusinessShow extends React.Component {
 
         <div className="show-page-content-margin">
           <div className="show-page-content-container">
+            <div className="review-index-container">
+              { reviewIndex }
+            </div>
             <div>
-              <p> Reviews go here!</p>
+              <div className="health-score-info">
+                <ul className="health-icon-list">
+                  <li><i className="far fa-clock"></i></li>
+                  <li><i className="fas fa-utensils"></i></li>
+                  { dollars }
+                  <li><i className="far fa-plus-square"></i></li>
+
+                </ul>
+                <ul className="health-icon-list-info">
+                  <li><span>Today <span className="bold-health">12:00pm - 10:00pm</span></span></li>
+                  <li><span className="bold-health blue-health">Full Menu</span></li>
+                  { dollarsInfo }
+                  <li><span><span className="bold-health blue-health">Health Score</span> 100 out of 100</span></li>
+
+
+                </ul>
+              </div>
             </div>
-            <div className="health-score-info">
-              <ul className="health-icon-list">
-                <li><i className="far fa-clock"></i></li>
-                <li><i className="fas fa-utensils"></i></li>
-                { dollars }
-                <li><i className="far fa-plus-square"></i></li>
-
-              </ul>
-              <ul className="health-icon-list-info">
-                <li><span>Today <span className="bold-health">12:00pm - 10:00pm</span></span></li>
-                <li><span className="bold-health blue-health">Full Menu</span></li>
-                { dollarsInfo }
-                <li><span><span className="bold-health blue-health">Health Score</span> 100 out of 100</span></li>
-
-
-              </ul>
-            </div>
-
 
           </div>
 
 
         </div>
-
       </div>
     );
   }

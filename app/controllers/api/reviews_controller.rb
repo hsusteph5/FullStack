@@ -1,7 +1,14 @@
 class Api::ReviewsController < ApplicationController
-  def index
-    @reviews = Review.all
-  end
+  # def index
+  #   #pulls all the reviews with the associated business
+  #   # @reviews = Review.where(business_id: params[:reviews][:business_id])
+  #   @reviews = Review.where(business_id: params[:reviews][:business_id])
+  #   if @reviews
+  #     render "api/businesses/business"
+  #   else
+  #     render json: {}
+  #   end
+  # end
 
   def create
   end

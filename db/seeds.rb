@@ -132,12 +132,28 @@ coffee_and_tea_crown_crumpet = Categorizing.create!(category_id: coffee_and_tea.
 categorizings << coffee_and_tea_crown_crumpet
 
 #reviews
+
+Review.destroy_all
 reviews = []
-review1 = Review.create!(author_id: demo.id, business_id: boba_guys.id, rating: 5, description: 'You must try the strawberry green tea latte!')
-reviews << review1
-review2 = Review.create!(author_id: user1.id, business_id: boba_guys.id, rating: 3, description: 'The line was so long, I had to wait forever.')
-reviews << review2
-review3 = Review.create!(author_id: user2.id, business_id: boba_guys.id, rating: 5, description: `I love this place, it's a must-try`)
-reviews << review3
-review4 = Review.create!(author_id: user3.id, business_id: boba_guys.id, rating: 5, description: `Not sure what the other user was talking about, the line was so short when I went.`)
-reviews << review4 
+boba_review1 = Review.create!(author_id: demo.id, business_id: boba_guys.id, rating: 5, description: "I came to Boba Guys on Saturday and loved it! I would highly recommend it.")
+reviews << boba_review1
+boba_review2 = Review.create!(author_id: user1.id, business_id: boba_guys.id, rating: 2, description: "The line was so long, I had to wait forever... I don't think I will ever be back. I'm not even sure what the hype is about.")
+reviews << boba_review2
+boba_review3 = Review.create!(author_id: user2.id, business_id: boba_guys.id, rating: 4, description: "I love this place, it's a must-try")
+reviews << boba_review3
+boba_review4 = Review.create!(author_id: user3.id, business_id: boba_guys.id, rating: 5, description: "Not sure what the other user was talking about, the line was so short when I went.")
+reviews << boba_review4
+
+
+sugar_review2 = Review.create!(author_id: user2.id, business_id: black_sugar.id, rating: 1, description: "I came here on Friday night and did get cashier was RUDE! Not only did he forget to give me change, my drink was so gross. DO NOT COME HERE!")
+reviews << sugar_review2
+sugar_review3 = Review.create!(author_id: user1.id, business_id: black_sugar.id, rating: 5, description: "This is one of my favorite bubble tea places in the SF!")
+reviews << sugar_review3
+sugar_review4 = Review.create!(author_id: demo.id, business_id: black_sugar.id, rating: 5, description: "Drink was soooooo...... goood.....")
+reviews << sugar_review4
+
+
+baked_bear_review1 = Review.create!(author_id: user1.id, business_id: baked_bear.id, rating: 5, description: "I always come here for the ice cream sandwiches, but I also love the cookies.")
+reviews << baked_bear_review1
+baked_bear_review2 = Review.create!(author_id: user2.id, business_id: baked_bear.id, rating: 4, description: "COOOOKIIEEESSS!!!!")
+reviews << baked_bear_review2

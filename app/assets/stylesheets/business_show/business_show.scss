@@ -56,6 +56,14 @@
   font-size: 15px;
 }
 
+.show-stars-alignment {
+  display: flex;
+  flex-direction: row;
+}
+
+.show-stars-alignment span {
+  padding-right: 3px;
+}
 .business-address {
   background: white;
   font-size: 12px;
@@ -64,14 +72,22 @@
   width: 300px;
 }
 
+.business-address ul, .business-address a {
+  font-size: 14px;
+}
+
 .business-address i {
   padding-right: 10px;
   color: #686868;
 }
 
 .show-address {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
+}
+
+.extra-padding-marker {
+  padding: 11px 8px;
 }
 
 .show-images-reel {
@@ -95,6 +111,8 @@
   transition-duration: 0.5s;
   box-shadow: 5px 4px 8px -4px grey;
 }
+
+
 
 .show-page-content-margin {
   width: 990px;

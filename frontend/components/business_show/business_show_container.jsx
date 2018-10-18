@@ -5,7 +5,11 @@ import BusinessShow from './business_show'
 
 const mapStateToProps = (state, ownProps) => {
   let int = parseInt(ownProps.match.params.businessId);
-  return { business: state.entities.businesses[int]}
+  return {
+    business: state.entities.businesses[int],
+    reviews: Object.values(state.entities.reviews),
+    users: state.entities.users
+  }
 }
 
 

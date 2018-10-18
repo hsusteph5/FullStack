@@ -68,12 +68,11 @@ ul.business-index-items-info {
 .businesses-stars-reviews {
   display: flex;
   flex-direction: row;
+  padding-right: 10px;
 }
 
 .businesses-stars-reviews > .user-star {
-  height: 17px;
-  width: 17px;
-  padding: 1px;
+  padding: 3px 2px;
   margin-right: 3px;
 }
 
