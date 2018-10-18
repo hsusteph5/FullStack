@@ -6,6 +6,7 @@ import Root from './components/root';
 // import { login, signup } from './util/session_api_util';
 // import { loginUser, signupUser, logout } from './actions/session_actions';
 import { fetchBusiness } from './actions/business_actions';
+import { createReview } from './actions/review_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.signupUser = signupUser;
   // window.logout = logout;
   window.fetchBusiness = fetchBusiness;
-
+  window.createReview = createReview;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 

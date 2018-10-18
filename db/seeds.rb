@@ -149,7 +149,7 @@ sugar_review2 = Review.create!(author_id: user2.id, business_id: black_sugar.id,
 reviews << sugar_review2
 sugar_review3 = Review.create!(author_id: user1.id, business_id: black_sugar.id, rating: 5, description: "This is one of my favorite bubble tea places in the SF!")
 reviews << sugar_review3
-sugar_review4 = Review.create!(author_id: demo.id, business_id: black_sugar.id, rating: 5, description: "Drink was soooooo...... goood.....")
+sugar_review4 = Review.create!(author_id: user3.id, business_id: black_sugar.id, rating: 5, description: "Drink was soooooo...... goood.....")
 reviews << sugar_review4
 
 
@@ -173,10 +173,10 @@ reviews << steap_tea_review2
 steap_tea_review3 = Review.create!(author_id: user4.id, business_id: steap_tea.id, rating: 5, description: "Love all the drinks here!")
 reviews << steap_tea_review3
 
-samovar_tea_review1 = Review.create!(author_id: demo.id, business_id: samovar_tea.id, rating: 4, description: "Great tea!")
+samovar_tea_review1 = Review.create!(author_id: user2.id, business_id: samovar_tea.id, rating: 4, description: "Great tea!")
 reviews << samovar_tea_review1
 
-asha_tea = Review.create!(author_id: demo.id, business_id: asha_tea.id, rating: 5, description: "I would recommend the green tea.")
+asha_tea = Review.create!(author_id: user2.id, business_id: asha_tea.id, rating: 5, description: "I would recommend the green tea.")
 reviews << asha_tea
 
 crown_crumpet_review1 = Review.create!(author_id: user4.id, business_id: crown_crumpet.id, rating: 5, description: "Love the little bite sized sandwiches")
@@ -189,5 +189,5 @@ sixth_course_review1 = Review.create!(author_id: user4.id, business_id: sixth_co
 reviews << sixth_course_review1
 milkbomb_ice_cream_review1 = Review.create!(author_id: user4.id, business_id: milkbomb_ice_cream.id, rating: 4, description: "This is one of my favorite ice cream places in SF")
 reviews << milkbomb_ice_cream_review1
-philmore_creamery_review1 = Review.create!(author_id: demo.id, business_id: philmore_creamery.id, rating: 5, description: "Great ice cream!")
+philmore_creamery_review1 = Review.create!(author_id: user1.id, business_id: philmore_creamery.id, rating: 5, description: "Great ice cream!")
 reviews << philmore_creamery_review1

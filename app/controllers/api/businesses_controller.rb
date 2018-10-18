@@ -8,7 +8,7 @@ class Api::BusinessesController < ApplicationController
       #find all associated businesses
       #
       # @categories = @businesses.categories
-      @businesses = @category.businesses.includes(:categories)
+      @businesses = @category.businesses.includes(:categories, :reviews)
     else
       @businesses = Business.where("name ilike ?", "%#{name}%")
     end

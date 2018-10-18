@@ -40,20 +40,14 @@ class Splash extends React.Component {
               <li><p>Photo by Oscar Nord on Unsplash</p></li>
               <li><p>Photo by Pille-Riin Priske on Unsplash</p></li>
             </ul>
+            <img src={cityscape_illustration} alt="cityscape_illustration"></img>
           </div>
 
-          <img src={cityscape_illustration} alt="cityscape_illustration"></img>
         </footer>
       </div>
     );
   }
 }
 
-// <div>
-//   <h3>About</h3>
-//   <ul>
-//     <li>Github</li>
-//   </ul>
-// </div>
 
 export default Splash;

@@ -1,0 +1,12 @@
+export const createReview = (review) => {
+  return (
+    $.ajax({
+      method: 'POST',
+      url: `/api/businesses/${review.business_id}/reviews`,
+      data: { review: review }
+    })
+  );
+}
+
+
+// review: {description: 'love this place!', rating: 5, business_id: 5}

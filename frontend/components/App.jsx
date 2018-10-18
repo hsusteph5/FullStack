@@ -6,6 +6,7 @@ import LoginFormContainer from './user_auth_form/login_form_container';
 import SignupFormContainer from './user_auth_form/signup_form_container';
 import BusinessesContainer from './businesses/businesses_container';
 import BusinessShowContainer from './business_show/business_show_container';
+import ReviewFormContainer from './review/review_form_container';
 
 import Splash from './splash/splash';
 import Modal from './modal/modal';
@@ -17,7 +18,8 @@ const App = () => (
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
       <Route exact path='/businesses' component={BusinessesContainer} />
-      <Route path ='/businesses/:businessId' component={BusinessShowContainer}/>
+      <Route exact path ='/businesses/:businessId' component={BusinessShowContainer}/>
+      <Route exact path ='/businesses/:businessId/writeareview' component={ReviewFormContainer}/>
       <Route exact path="/"component={Splash} />
       <Redirect push to="/" />
     </Switch>

@@ -13,6 +13,7 @@ json.businesses do
   @businesses.each do |business|
     json.set! business.id do
       json.avg_rating business.reviews.average(:rating).round(1)
+      json.num_reviews business.reviews.count
       json.extract! business, :id, :name, :address, :phone, :price
       json.categories business.categories.map { |category| category.title }
     end

@@ -1,4 +1,6 @@
 import { RECEIVE_BUSINESS, RECEIVE_BUSINESSES } from '../../actions/business_actions';
+import { RECEIVE_REVIEW } from '../../actions/review_actions';
+
 import merge from 'lodash/merge';
 
 
@@ -9,6 +11,8 @@ const reviewReducer = (state = {}, action) => {
     case RECEIVE_BUSINESS:
       let newState = merge({}, action.payload.reviews);
       return newState;
+    case RECEIVE_REVIEW:
+      return merge({}, state, action.review);
     default:
       return state;
   }
