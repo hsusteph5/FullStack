@@ -49,8 +49,10 @@ export const createStars = () => {
 }
 
 export const createRatingStars = (rating) => {
+  let intRating = Math.round(parseFloat(rating));
+  // debugger;
   let stars;
-  switch (rating) {
+  switch (intRating) {
     case 1:
       stars = (
 

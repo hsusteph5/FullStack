@@ -157,3 +157,37 @@ baked_bear_review1 = Review.create!(author_id: user1.id, business_id: baked_bear
 reviews << baked_bear_review1
 baked_bear_review2 = Review.create!(author_id: user2.id, business_id: baked_bear.id, rating: 4, description: "COOOOKIIEEESSS!!!!")
 reviews << baked_bear_review2
+
+
+coco_review1 = Review.create!(author_id: user3.id, business_id: coco.id, rating: 3, description: "The drink I got was okay..")
+reviews << coco_review1
+urban_ritual_review1 = Review.create!(author_id: user2.id, business_id: urban_ritual.id, rating: 4, description: "After seeing an ad about this place, I finally decided to go. I get the honey oolong tea.")
+reviews << urban_ritual_review1
+karma_cafe = Review.create!(author_id: user1.id, business_id: karma_cafe.id, rating: 4, description: "Everything here is so good, but pretty pricey.")
+reviews << karma_cafe
+
+steap_tea_review1 = Review.create!(author_id: user2.id, business_id: steap_tea.id, rating: 1, description: "I waited 30 minutes for my drink, only to find out they forgot to make it. The drink wasn't even good.")
+reviews << steap_tea_review1
+steap_tea_review2 = Review.create!(author_id: user3.id, business_id: steap_tea.id, rating: 3, description: "I was anxious to try to the tea, but was sorely disappointed.")
+reviews << steap_tea_review2
+steap_tea_review3 = Review.create!(author_id: user4.id, business_id: steap_tea.id, rating: 5, description: "Love all the drinks here!")
+reviews << steap_tea_review3
+
+samovar_tea_review1 = Review.create!(author_id: demo.id, business_id: samovar_tea.id, rating: 4, description: "Great tea!")
+reviews << samovar_tea_review1
+
+asha_tea = Review.create!(author_id: demo.id, business_id: asha_tea.id, rating: 5, description: "I would recommend the green tea.")
+reviews << asha_tea
+
+crown_crumpet_review1 = Review.create!(author_id: user4.id, business_id: crown_crumpet.id, rating: 5, description: "Love the little bite sized sandwiches")
+reviews << crown_crumpet_review1
+hollow_review1 =  Review.create!(author_id: user3.id, business_id: hollow.id, rating: 5, description: "I grabbed lunch with some friends on Sunday and had a superb time. The staff was so kind and friendly.")
+reviews << hollow_review1
+the_mill_review1 =  Review.create!(author_id: user3.id, business_id: the_mill.id, rating: 5, description: "Beautiful decor, a great time with friends, and good food! 5 / 5 ")
+reviews << the_mill_review1
+sixth_course_review1 = Review.create!(author_id: user4.id, business_id: sixth_course.id, rating: 5, description: "The desserts are so good here!")
+reviews << sixth_course_review1
+milkbomb_ice_cream_review1 = Review.create!(author_id: user4.id, business_id: milkbomb_ice_cream.id, rating: 4, description: "This is one of my favorite ice cream places in SF")
+reviews << milkbomb_ice_cream_review1
+philmore_creamery_review1 = Review.create!(author_id: demo.id, business_id: philmore_creamery.id, rating: 5, description: "Great ice cream!")
+reviews << philmore_creamery_review1

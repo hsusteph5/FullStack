@@ -2,7 +2,7 @@ import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import CategoriesContainer from '../search/categories_container';
 import titleize  from 'titleize';
-import { createStars, parsingPrice, businessCategories, parsingCity, parsingStreet } from '../../util/parsing_manager.jsx'
+import { createRatingStars, parsingPrice, businessCategories, parsingCity, parsingStreet } from '../../util/parsing_manager.jsx'
 import sandwich from '../../../app/assets/images/sandwich.png';
 import drinkingCoffee from '../../../app/assets/images/drinking-coffee.png';
 import cafeFront from '../../../app/assets/images/cafe-front.png';
@@ -143,7 +143,7 @@ class BusinessShow extends React.Component {
         <div>
           <ul className="business-show-list">
             <li><h1>{this.props.business.name}</h1></li>
-            <li className="show-stars-alignment">{createStars()}<span>{this.props.reviews.length} Reviews</span></li>
+            <li className="show-stars-alignment">{createRatingStars(this.props.business.avg_rating)}<span>{this.props.reviews.length} Reviews</span></li>
             <li className="business-price">{parsingPrice(this.props.business.price)}</li>
             {this.businessCategories(this.props.business.categories)}
           </ul>
