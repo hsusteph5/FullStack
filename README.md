@@ -21,7 +21,8 @@
 
 
 * Code snippet
-` <div className="main-businesses">
+```JS
+  <div className="main-businesses">
     <button onClick={this.redirectShow(this.business.id)}>{ this.business.name }</button>
     <div className ="main-businesses-content">
 
@@ -51,7 +52,8 @@
     </p>
 
 
-  </div>`
+  </div>
+  ```
 
 
 * Deployment instructions
@@ -59,7 +61,7 @@
     * rails s
 
 * Future Features
-    * Edit Post and a Route for Write a Review button 
+    * Edit Post and a Route for Write a Review button
     * Google Maps and pull from Google maps
     * Active Storage all the images
 
