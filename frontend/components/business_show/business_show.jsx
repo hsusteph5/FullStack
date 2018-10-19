@@ -143,7 +143,7 @@ class BusinessShow extends React.Component {
       dollarsInfo = this.createDollarWords();
       reviewIndex = (
         <div>
-          <ReviewIndex users={this.props.users} reviews={this.props.reviews}/>
+          <ReviewIndex users={this.props.users} reviews={this.props.reviews} currentUserId={this.props.currentUserId}/>
         </div>
       )
       businessInfo = (
