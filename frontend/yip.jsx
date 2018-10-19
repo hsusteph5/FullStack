@@ -35,11 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.loginUser = loginUser;
   // window.signupUser = signupUser;
   // window.logout = logout;
-  window.updateReview = updateReview;
-  window.fetchBusiness = fetchBusiness;
-  window.createReview = createReview;
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+
+
+  // window.updateReview = updateReview;
+  // window.fetchBusiness = fetchBusiness;
+  // window.createReview = createReview;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
 
   //
 
