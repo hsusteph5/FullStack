@@ -11,7 +11,7 @@ import ReviewForm from './review_form';
 const mapStateToProps = (state, ownProps) => {
   //businessId is a string -> int
   let parseBusinessId = parseInt(ownProps.match.params.businessId)
-  let business = Object.values(state.entities.businesses)[0]
+  let business = state.entities.businesses[ownProps.match.params.businessId]
   return {
     business: business,
     business_id: parseBusinessId,

@@ -6,7 +6,7 @@ import { createRatingStars } from '../../util/parsing_manager.jsx';
 //users: {50: {}, 43: {}, 21: {}}
 const ReviewIndex = ({users, reviews}) => {
   // debugger;
-  let review = reviews.map(review => {
+  let review = reviews.reverse().map(review => {
     if (users[review.author_id] === undefined) return '';
     return (
       <div className="business-review-container" key={review.id}>
