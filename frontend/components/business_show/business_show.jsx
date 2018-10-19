@@ -128,13 +128,11 @@ class BusinessShow extends React.Component {
   }
 
   reviewForm(e){
-    // debugger;
     e.preventDefault;
     this.props.history.push(`/businesses/${this.props.business.id}/writeareview`);
   }
 
   render() {
-    // debugger;
     let businessInfo;
     let businessAddress;
     let dollars;

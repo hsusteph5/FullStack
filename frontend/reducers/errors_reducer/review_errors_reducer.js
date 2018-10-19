@@ -1,11 +1,10 @@
 import { RECEIVE_REVIEW_ERRORS, RECEIVE_REVIEW, RESET_ERRORS } from '../../actions/review_actions';
-
+import merge from 'lodash/merge';
 
 const reviewErrorsReducer = (oldState = [], action) => {
-  // debugger;
   switch (action.type) {
     case RECEIVE_REVIEW_ERRORS:
-      return action.errors
+      return merge([], action.errors);
     case RECEIVE_REVIEW:
       return []
     default:

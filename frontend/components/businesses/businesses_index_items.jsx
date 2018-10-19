@@ -34,7 +34,6 @@ class BusinessesIndexItems extends React.Component {
 
   //creating a function that will render all the categories
   businessCategories(categories){
-    // debugger;
     return categories.map((category, idx) => {
       if(idx !== categories.length - 1) {
         return (
@@ -53,12 +52,12 @@ class BusinessesIndexItems extends React.Component {
 
 
 //redirect to the show!
+//the payload is keyed into payload (need to get the value from the Object)
     redirectShow(id){
       return (e) => {
         e.preventDefault();
         this.props.fetchBusiness(id)
           .then((payload) => {
-            // debugger;
             let id = Object.keys(payload.payload.businesses)[0];
             let parseId = parseInt(id);
             this.props.history.push(`/businesses/${parseId}`)
@@ -68,7 +67,6 @@ class BusinessesIndexItems extends React.Component {
 
 
   render() {
-    // debugger;
     this.business = this.props.business
     let review = this.props.reviews[this.business.id];
     if (review === undefined) return '';

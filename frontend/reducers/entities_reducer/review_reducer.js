@@ -5,7 +5,6 @@ import merge from 'lodash/merge';
 
 
 const reviewReducer = (state = {}, action) => {
-  // debugger;
   switch (action.type) {
     case RECEIVE_BUSINESSES:
       return action.payload.reviews;

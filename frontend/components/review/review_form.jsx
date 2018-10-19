@@ -40,7 +40,6 @@ class ReviewForm extends React.Component {
   submitReview(e){
     e.preventDefault();
     this.props.createReview(this.state)
-      // .then(res => console.log(res))
       .then(review => this.props.history.push(`/businesses/${this.props.match.params.businessId}`));
   }
 
@@ -55,7 +54,7 @@ class ReviewForm extends React.Component {
 
 
     }
-    // debugger;
+
     if(this.props.errors) {
       errors = (
         <ul className="errors-create-review-form">
@@ -63,7 +62,6 @@ class ReviewForm extends React.Component {
         </ul>
       )
     }
-    // debugger;
     return(
       <div className="create-review-form">
         <div className="create-review-form-nav-bar">

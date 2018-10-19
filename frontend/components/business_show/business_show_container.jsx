@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchBusiness, fetchBusinesses } from '../../actions/business_actions';
-import BusinessShow from './business_show'
+import BusinessShow from './business_show';
 
 const mapStateToProps = (state, ownProps) => {
   let int = parseInt(ownProps.match.params.businessId);

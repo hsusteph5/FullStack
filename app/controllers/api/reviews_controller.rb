@@ -13,7 +13,13 @@ class Api::ReviewsController < ApplicationController
   end
 
 
-  def edit
+  def update
+    @review = current_user.reviews.find_by(id: params[:id])
+    if @review.update_attributes(review_params)
+      render json: @review
+    else
+      render json: ['Cannot find this review'], status: 401
+    end
   end
 
   def delete
@@ -24,3 +30,10 @@ class Api::ReviewsController < ApplicationController
     params.require(:review).permit(:description, :rating, :business_id)
   end
 end
+#
+# $.ajax({
+#     method: "PATCH",
+#     url: `api/reviews/${152}`,
+#     data:
+#       {review: {rating: 2, description: 'not a great place to eat! GAHHHH'}}})
+#.then(res => console.log(res));

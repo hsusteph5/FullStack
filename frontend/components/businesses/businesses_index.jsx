@@ -21,7 +21,6 @@ class BusinessesIndex extends React.Component {
 //when the url reached is not the same as the previous url saved, fetch new businesses
   parseFetchBusiness() {
     if(this.state.query !== this.props.location.search) {
-      // debugger;
       let searchParams = this.props.location.search;
       //searchQuery will parse out the name into a { name: 'tea'}
       let parseParams = parseSearch(searchParams);
