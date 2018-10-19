@@ -2,10 +2,12 @@ class Api::ReviewsController < ApplicationController
   #index is fetched with the business
 
   def create
+    #has a response
     @review = Review.new(review_params)
     @review.author_id = current_user.id
     @review.business_id = params[:business_id]
     if @review.save
+      #does not render JSON 
       # render json: 'api/reviews/review'
     else
       render json: @review.errors.full_messages, status: 401
@@ -20,6 +22,10 @@ class Api::ReviewsController < ApplicationController
     else
       render json: ['Cannot find this review'], status: 401
     end
+  end
+
+  def show
+    @review = Review.find(params[:id])
   end
 
   def delete

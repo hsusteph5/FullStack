@@ -32,3 +32,12 @@ export const updateReview = (review) => {
       )
   }
 }
+
+export const fetchReview = (id) => {
+  return dispatch => {
+    return ReviewAPI.fetchReview(id)
+      .then(
+        review => dispatch(receiveReview(review))
+      )
+  }
+}

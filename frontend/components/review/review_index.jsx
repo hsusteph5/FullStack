@@ -14,11 +14,15 @@ const ReviewIndex = ({users, reviews, currentUserId}) => {
 
 
     //if the the current user owns the review, edit button will appear
+
+    //comment this in when you fix the edit form
     editButton = (currentUserId === review.author_id) ? (
       <button>
         Edit this review
       </button>
     ): ("")
+
+
 
     return (
       <div className="business-review-container" key={review.id}>
