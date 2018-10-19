@@ -21,14 +21,21 @@ class BusinessesIndexItems extends React.Component {
 //on the Click of the category
 //1. fetches the businesses (associated with the category)
 //2. pushes to the new path
+//set state happens asynchronously, so you have to pass in a callback
+//1. set state and THEN you fetch the business
   searchBusinesses(category){
     return (e) => {
       e.preventDefault();
-      this.setState({name: category});
-      this.props.fetchBusinesses(this.state)
-        .then(() => this.props.history.push(
-          { pathname:'/businesses', search: `?name=${category}`}
-        ));
+      this.setState({name: category}, () => {
+        this.props.fetchBusinesses(this.state)
+        .then(
+          () => this.props.history.push({ pathname:'/businesses', search: `?name=${category}`})
+        )
+      });
+      // this.props.fetchBusinesses(this.state)
+      //   .then(() => this.props.history.push(
+      //     { pathname:'/businesses', search: `?name=${category}`}
+      //   ));
     }
   }
 

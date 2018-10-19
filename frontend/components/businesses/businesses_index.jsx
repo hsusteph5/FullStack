@@ -40,10 +40,9 @@ class BusinessesIndex extends React.Component {
     this.parseFetchBusiness();
   }
 
-
-  componentDidUpdate() {
-    this.parseFetchBusiness();
-  }
+  // componentDidUpdate() {
+  //   this.parseFetchBusiness();
+  // }
 
 //pass down this.props.fetchBusinesses down to the index-items so that
 //the index-items can fetchBusinesses upon calling searchBusinesses

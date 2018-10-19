@@ -10,8 +10,11 @@ const ReviewIndex = ({users, reviews, currentUserId}) => {
   //need to pass down the session
   let editButton;
   let review = reviews.reverse().map(review => {
-    if (users[review.author_id] === undefined) return '';
-
+    //render an empty string when you fetchBusinesses and it tries to render the reviews (information is lost)
+    //will error out if nothing is rendered
+    if (users[review.author_id] === undefined) {
+      return '';
+    }
 
     //if the the current user owns the review, edit button will appear
 

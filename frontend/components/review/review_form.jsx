@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import icon from '../../../app/assets/images/user-icon.png';
 import yip from '../../../app/assets/images/yip-logo.png';
+import StarComponent from './star-component';
 
 class ReviewForm extends React.Component {
   constructor(props){
@@ -28,10 +29,7 @@ class ReviewForm extends React.Component {
 //udpates the rating with a callback (updates the local state and also prevents
 //from being clicked on)
   updateRating(rating){
-    return (e) => {
-      e.preventDefault();
-      this.setState({rating: rating});
-    }
+    this.setState({rating: rating});
   }
 
 
@@ -102,26 +100,7 @@ class ReviewForm extends React.Component {
 
           { name }
           <form className="create-review-form-container">
-            <div className="businesses-stars-reviews">
-
-              <div className="user-star grey-star star1" onClick={this.updateRating(1)}>
-                <i className="fas fa-star"></i>
-              </div>
-              <div className="user-star grey-star star2" onClick={this.updateRating(2)}>
-                <i className="fas fa-star"></i>
-              </div>
-              <div className="user-star grey-star star3" onClick={this.updateRating(3)}>
-                <i className="fas fa-star"></i>
-              </div>
-              <div className="user-star grey-star star4" onClick={this.updateRating(4)}>
-                <i className="fas fa-star"></i>
-              </div>
-
-              <div className="user-star grey-star star5" onClick={this.updateRating(5)}>
-                <i className="fas fa-star"></i>
-              </div>
-
-            </div>
+            <StarComponent updateRating={this.updateRating} />
 
             <textarea
               placeholder="Your review helps others learn about great local busineses"
