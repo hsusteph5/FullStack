@@ -1,71 +1,76 @@
-# README
+# Yip
 
-* Yip is a Yelp clone, you can search restaurants by name and categories and write reviews.
+* Yip is a Yelp clone, you can search restaurants by name and categories and write reviews. Click here for the [live](https://yip2018.herokuapp.com/#/) demo.
 
-* Click here: https://yip2018.herokuapp.com/#/
+![Splash Page](app/assets/images/splash-page.png)
 
-* Technologies
-    * JQuery
-    * Postgres SQL
-    * Ruby on Rails
-    * React
-    * Javascript
+## Technologies
+  * JQuery
+  * Postgres SQL
+  * Ruby on Rails
+  * React
+  * Javascript
 
-* Check out these 2 cool features:
+## Features:
+![All Business](app/assets/images/all-businesses.png)
   * Search by name and category
       * Challenge: Passing information to the index page with all the businesses
-      * Solution: Created a query string that would be parsed on the business index page
+      * Solution: Created a query string that would be parsed on the business index page and saved in the local state
+
+      ``` javascript
+        constructor(props) {
+          super(props);
+          this.state = {
+            name: "",
+            query: ""
+        }
+        this.businessCategories = this.businessCategories.bind(this);
+        this.searchBusinesses = this.searchBusinesses.bind(this);
+        this.redirectShow = this.redirectShow.bind(this);
+      }
+      searchBusinesses(category){
+        return (e) => {
+          e.preventDefault();
+          this.setState({name: category}, () => {
+            this.props.fetchBusinesses(this.state)
+            .then(
+              () => this.props.history.push({ pathname:'/businesses', search: `?name=${category}`})
+            )
+          });
+        }
+      }
+      ```
+![Business Show](app/assets/images/business-show.png)
   * Reviews on the business show page
     * Challenge: Passing authored users to the business show page
     * Solution: The payload from the backend includes: businesses, business's reviews, and authored reviews
+         ``` ruby
+        json.businesses do
+          @businesses.each do |business|
+            json.set! business.id do
+              json.avg_rating business.reviews.average(:rating).round(1)
+              json.num_reviews business.reviews.count
+              json.extract! business, :id, :name, :address, :phone, :price
+              json.categories business.categories.map { |category| category.title }
+            end
+          end
+        end
+
+        json.reviews do
+          @businesses.each do |business|
+            json.set! business.reviews.first.business_id do
+              json.extract! business.reviews.first, :id, :description, :author_id, :business_id, :rating
+            end
+          end
+        end
+      ```
 
 
-* Code snippet
-```JS
-  <div className="main-businesses">
-    <button onClick={this.redirectShow(this.business.id)}>{ this.business.name }</button>
-    <div className ="main-businesses-content">
+## Deployment instructions
+   *  npm run test
+   *  rails s
 
-      <div className="business-reviews-info">
-
-
-        <h3> { createRatingStars(this.business.avg_rating)}
-
-        </h3>
-        <ul className="index-categories-list">
-          <li>{ parsingPrice(this.business.price)}</li>
-          <li className="business-circle"> <i className="fas fa-circle"></i> </li>
-          { this.businessCategories(this.business.categories) }
-        </ul>
-
-      </div>
-
-      <ul className="business-index-items-info">
-        <li> { parsingStreet(this.business.address) } </li>
-        <li> { parsingCity(this.business.address) } </li>
-        <li> { this.business.phone } </li>
-      </ul>
-    </div>
-
-    <p>
-      {review.description}
-    </p>
-
-
-  </div>
-  ```
-
-
-* Deployment instructions
-    * npm test
-    * rails s
-
-* Future Features
-    * Edit Post and a Route for Write a Review button
-    * Google Maps and pull from Google maps
-    * Active Storage all the images
-
-
-Credits:
-* dropdown: https://www.w3schools.com/css/css_dropdowns.asp
-* Photos: Background Splash Page by Roman Kraft on Unsplash
+## Future Features
+  *  Edit Post and a Route for Write a Review button
+  *  Google Maps and pull from Google maps
+  *  Active Storage all the images

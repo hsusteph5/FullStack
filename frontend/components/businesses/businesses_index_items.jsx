@@ -32,10 +32,6 @@ class BusinessesIndexItems extends React.Component {
           () => this.props.history.push({ pathname:'/businesses', search: `?name=${category}`})
         )
       });
-      // this.props.fetchBusinesses(this.state)
-      //   .then(() => this.props.history.push(
-      //     { pathname:'/businesses', search: `?name=${category}`}
-      //   ));
     }
   }
 

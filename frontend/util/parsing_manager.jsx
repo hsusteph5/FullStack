@@ -23,30 +23,30 @@ export const parsingPrice = (int) => {
   return priceStr;
 }
 
-export const createStars = () => {
-  return (
-    <div className="businesses-stars-reviews">
-
-      <div className="user-star">
-        <i className="fas fa-star"></i>
-      </div>
-      <div className="user-star">
-        <i className="fas fa-star"></i>
-      </div>
-      <div className="user-star">
-        <i className="fas fa-star"></i>
-      </div>
-      <div className="user-star">
-        <i className="fas fa-star"></i>
-      </div>
-
-      <div className="user-star">
-        <i className="fas fa-star"></i>
-      </div>
-
-    </div>
-  );
-}
+// export const createStars = () => {
+//   return (
+//     <div className="businesses-stars-reviews">
+//
+//       <div className="user-star">
+//         <i className="fas fa-star"></i>
+//       </div>
+//       <div className="user-star">
+//         <i className="fas fa-star"></i>
+//       </div>
+//       <div className="user-star">
+//         <i className="fas fa-star"></i>
+//       </div>
+//       <div className="user-star">
+//         <i className="fas fa-star"></i>
+//       </div>
+//
+//       <div className="user-star">
+//         <i className="fas fa-star"></i>
+//       </div>
+//
+//     </div>
+//   );
+// }
 
 export const createRatingStars = (rating) => {
   let intRating = Math.round(parseFloat(rating));
