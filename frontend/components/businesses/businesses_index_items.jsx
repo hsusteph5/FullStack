@@ -68,7 +68,7 @@ class BusinessesIndexItems extends React.Component {
       }
     }
 
-
+    // <img src={tea}></img>
   render() {
     this.business = this.props.business
     let review = this.props.reviews[this.business.id];
@@ -77,7 +77,7 @@ class BusinessesIndexItems extends React.Component {
       <div className="business-index-items">
         <div className="business-index-items-container">
 
-          <img src={tea}></img>
+          <img style={{width: 225, height: 225}} src={this.business.photoUrls[0]}></img>
 
           <div className="main-businesses">
             <button onClick={this.redirectShow(this.business.id)}>{ this.business.name }</button>
