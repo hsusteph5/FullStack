@@ -36,6 +36,6 @@ class Business < ApplicationRecord
     through: :reviews,
     source: :author
 
-  has_one_attached :photo
+  has_many_attached :photos
 
 end

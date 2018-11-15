@@ -58,6 +58,16 @@ businesses << milkbomb_ice_cream
 philmore_creamery = Business.create!(name: 'Philmore Creamery', address: "1840 Fillmore St San Francisco, CA 94115", phone: '(415) 786-2961', url: "philmorecreamery.com", price: 2)
 businesses << philmore_creamery
 
+#images 
+boba_guys1 = File.open('app/assets/images/boba_guys/boba_guys1.jpg');
+boba_guys2 = File.open('app/assets/images/boba_guys/boba_guys2.jpg');
+boba_guys3 = File.open('app/assets/images/boba_guys/boba_guys3.jpg');
+boba_guys.photos.attach(io: boba_guys1, filename: 'boba_guys1');
+boba_guys.photos.attach(io: boba_guys2, filename: 'boba_guys2');
+boba_guys.photos.attach(io: boba_guys3, filename: 'boba_guys3');
+
+
+
 
 Category.destroy_all
 categories = []

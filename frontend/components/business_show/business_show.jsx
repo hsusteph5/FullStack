@@ -8,7 +8,7 @@ import drinkingCoffee from '../../../app/assets/images/drinking-coffee.png';
 import cafeFront from '../../../app/assets/images/cafe-front.png';
 import googleMap from '../../../app/assets/images/google-map.png';
 import ReviewIndex from '../review/review_index';
-
+import createDollarWords from '../../util/creatingicons.jsx';
 // import { Link } from 'react-router-dom';
 
 
@@ -20,7 +20,7 @@ class BusinessShow extends React.Component {
     }
     this.businessCategories = this.businessCategories.bind(this);
     this.createDollars = this.createDollars.bind(this);
-    this.createDollarWords = this.createDollarWords.bind(this);
+    // this.createDollarWords = this.createDollarWords.bind(this);
     this.searchBusinesses = this.searchBusinesses.bind(this);
     this.reviewForm = this.reviewForm.bind(this);
   }
@@ -98,41 +98,13 @@ class BusinessShow extends React.Component {
     }
   }
 
-
-  createDollarWords() {
-    if(this.props.business.price === 1) {
-      return (
-        <li>
-          <span>Price Range <span className="bold-health">Over $10</span></span>
-        </li>
-      );
-    } else if (this.props.business.price === 2){
-      return (
-        <li>
-          <span>Price Range <span className="bold-health">$11-30</span></span>
-        </li>
-      );
-    } if(this.props.business.price === 3) {
-      return (
-        <li>
-          <span>Price Range <span className="bold-health">$31-60</span></span>
-        </li>
-      );
-    } else if (this.props.business.price === 4){
-      return (
-        <li>
-          <span>Price Range <span className="bold-health">Above $61</span></span>
-        </li>
-      );
-    }
-  }
-
   reviewForm(e){
     e.preventDefault;
     this.props.history.push(`/businesses/${this.props.business.id}/writeareview`);
   }
 
   render() {
+    // let images = (this.props.business) ? (<img src={this.props.business.photoUrls[0]}></img>) : ("")
     let businessInfo;
     let businessAddress;
     let dollars;
@@ -140,7 +112,7 @@ class BusinessShow extends React.Component {
     let reviewIndex;
     if (this.props.business){
       dollars = this.createDollars();
-      dollarsInfo = this.createDollarWords();
+      dollarsInfo = createDollarWords(this.props.business.price);
       reviewIndex = (
         <div>
           <ReviewIndex users={this.props.users} reviews={this.props.reviews} currentUserId={this.props.currentUserId}/>
@@ -200,7 +172,6 @@ class BusinessShow extends React.Component {
                 { businessAddress }
 
               </div>
-              <img src={ sandwich }></img>
               <img src={ drinkingCoffee }></img>
               <img src={ cafeFront }></img>
             </div>
