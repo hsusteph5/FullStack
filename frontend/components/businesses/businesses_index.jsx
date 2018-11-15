@@ -40,6 +40,13 @@ class BusinessesIndex extends React.Component {
     this.parseFetchBusiness();
   }
 
+  //when pushing to a new site, it checks the url before fetching the businesses
+  componentDidUpdate(prevProps){
+    if(this.props.location.search !== prevProps.location.search){
+      this.parseFetchBusiness();
+    }
+  }
+
 
 //pass down this.props.fetchBusinesses down to the index-items so that
 //the index-items can fetchBusinesses upon calling searchBusinesses
