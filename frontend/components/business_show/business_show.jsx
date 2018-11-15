@@ -20,7 +20,6 @@ class BusinessShow extends React.Component {
     }
     this.businessCategories = this.businessCategories.bind(this);
     this.createDollars = this.createDollars.bind(this);
-    // this.createDollarWords = this.createDollarWords.bind(this);
     this.searchBusinesses = this.searchBusinesses.bind(this);
     this.reviewForm = this.reviewForm.bind(this);
   }
@@ -104,6 +103,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
+    let images;
     // let images = (this.props.business) ? (<img src={this.props.business.photoUrls[0]}></img>) : ("")
     let businessInfo;
     let businessAddress;
@@ -137,6 +137,15 @@ class BusinessShow extends React.Component {
           <li className="show-link"><i className="fas fa-external-link-alt"></i><a target="_blank" href={`http://${this.props.business.url}`}>{this.props.business.url}</a></li>
         </ul>
       );
+      images = (
+        <div>
+          { this.props.business.photoUrls.map((url, idx) => <img key={idx} src={url} style={{width: 225, height: 250}}></img>) }
+        </div>
+      );
+      // <img src={this.props.business.photoUrls[0]}></img>
+      // <img src={this.props.business.photoUrls[1]}></img>
+      // <img src={this.props.business.photoUrls[2]}></img>
+      // { this.props.business.photoUrls.map((url) => <img src={url}></img>) }
     }
     return (
       <div>
@@ -172,8 +181,8 @@ class BusinessShow extends React.Component {
                 { businessAddress }
 
               </div>
-              <img src={ drinkingCoffee }></img>
-              <img src={ cafeFront }></img>
+              { images }
+
             </div>
 
 
