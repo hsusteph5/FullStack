@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 #User seeds
 User.destroy_all
 
@@ -57,6 +49,115 @@ milkbomb_ice_cream = Business.create!(name: 'Milkbomb Ice Cream', address: "1717
 businesses << milkbomb_ice_cream
 philmore_creamery = Business.create!(name: 'Philmore Creamery', address: "1840 Fillmore St San Francisco, CA 94115", phone: '(415) 786-2961', url: "philmorecreamery.com", price: 2)
 businesses << philmore_creamery
+
+#images
+boba_guys1 = File.open('app/assets/images/boba_guys/boba_guys1.jpg');
+boba_guys2 = File.open('app/assets/images/boba_guys/boba_guys2.jpg');
+boba_guys3 = File.open('app/assets/images/boba_guys/boba_guys3.jpg');
+boba_guys.photos.attach(io: boba_guys1, filename: 'boba_guys1');
+boba_guys.photos.attach(io: boba_guys2, filename: 'boba_guys2');
+boba_guys.photos.attach(io: boba_guys3, filename: 'boba_guys3');
+
+coco1 = File.open('app/assets/images/coco/coco1.jpg');
+coco2 = File.open('app/assets/images/coco/coco2.jpg');
+coco3 = File.open('app/assets/images/coco/coco3.jpg');
+coco.photos.attach(io: coco1, filename: 'coco1');
+coco.photos.attach(io: coco2, filename: 'coco2');
+coco.photos.attach(io: coco3, filename: 'coco3');
+
+urban_ritual1 = File.open('app/assets/images/urban_ritual/urban_ritual1.jpg');
+urban_ritual2 = File.open('app/assets/images/urban_ritual/urban_ritual2.jpg');
+urban_ritual3 = File.open('app/assets/images/urban_ritual/urban_ritual3.jpg');
+urban_ritual.photos.attach(io: urban_ritual1, filename: 'urban_ritual1');
+urban_ritual.photos.attach(io: urban_ritual2, filename: 'urban_ritual2');
+urban_ritual.photos.attach(io: urban_ritual3, filename: 'urban_ritual3');
+
+karma_cafe1 = File.open('app/assets/images/karma_cafe/karma_cafe1.jpg');
+karma_cafe2 = File.open('app/assets/images/karma_cafe/karma_cafe2.jpg');
+karma_cafe3 = File.open('app/assets/images/karma_cafe/karma_cafe3.jpg');
+karma_cafe.photos.attach(io: karma_cafe1, filename: 'karma_cafe1');
+karma_cafe.photos.attach(io: karma_cafe2, filename: 'karma_cafe2');
+karma_cafe.photos.attach(io: karma_cafe3, filename: 'karma_cafe3');
+
+black_sugar1 = File.open('app/assets/images/black_sugar/black_sugar1.jpg');
+black_sugar2 = File.open('app/assets/images/black_sugar/black_sugar2.jpg');
+black_sugar3 = File.open('app/assets/images/black_sugar/black_sugar3.jpg');
+black_sugar.photos.attach(io: black_sugar1, filename: 'black_sugar1');
+black_sugar.photos.attach(io: black_sugar2, filename: 'black_sugar2');
+black_sugar.photos.attach(io: black_sugar3, filename: 'black_sugar3');
+
+steap_tea1 = File.open('app/assets/images/steap/steap1.jpg');
+steap_tea2 = File.open('app/assets/images/steap/steap2.jpg');
+steap_tea3 = File.open('app/assets/images/steap/steap3.jpg');
+steap_tea.photos.attach(io: steap_tea1, filename: 'steap_tea1');
+steap_tea.photos.attach(io: steap_tea2, filename: 'steap_tea2');
+steap_tea.photos.attach(io: steap_tea3, filename: 'steap_tea3');
+
+samovar_tea1 = File.open('app/assets/images/samovar/samovar1.jpg');
+samovar_tea2 = File.open('app/assets/images/samovar/samovar2.jpg');
+samovar_tea3 = File.open('app/assets/images/samovar/samovar3.jpg');
+samovar_tea.photos.attach(io: samovar_tea1, filename: 'samovar_tea1');
+samovar_tea.photos.attach(io: samovar_tea2, filename: 'samovar_tea2');
+samovar_tea.photos.attach(io: samovar_tea3, filename: 'samovar_tea3');
+
+asha_tea1 = File.open('app/assets/images/asha_tea/asha_tea1.jpg');
+asha_tea2 = File.open('app/assets/images/asha_tea/asha_tea2.jpg');
+asha_tea3 = File.open('app/assets/images/asha_tea/asha_tea3.jpg');
+asha_tea.photos.attach(io: asha_tea1, filename: 'asha_tea1');
+asha_tea.photos.attach(io: asha_tea2, filename: 'asha_tea2');
+asha_tea.photos.attach(io: asha_tea3, filename: 'asha_tea3');
+
+crown_crumpet1 = File.open('app/assets/images/crown_and_crumpet/crown_and_crumpet1.jpg');
+crown_crumpet2 = File.open('app/assets/images/crown_and_crumpet/crown_and_crumpet2.jpg');
+crown_crumpet3 = File.open('app/assets/images/crown_and_crumpet/crown_and_crumpet3.jpg');
+crown_crumpet.photos.attach(io: crown_crumpet1, filename: 'crown_crumpet1');
+crown_crumpet.photos.attach(io: crown_crumpet2, filename: 'crown_crumpet2');
+crown_crumpet.photos.attach(io: crown_crumpet3, filename: 'crown_crumpet3');
+
+hollow1 = File.open('app/assets/images/hollow/hollow1.jpg');
+hollow2 = File.open('app/assets/images/hollow/hollow2.jpg');
+hollow3 = File.open('app/assets/images/hollow/hollow3.jpg');
+hollow.photos.attach(io: hollow1, filename: 'hollow1');
+hollow.photos.attach(io: hollow2, filename: 'hollow2');
+hollow.photos.attach(io: hollow3, filename: 'hollow3');
+
+the_mill1 = File.open('app/assets/images/the_mill/mill1.jpg');
+the_mill2 = File.open('app/assets/images/the_mill/mill2.jpg');
+the_mill3 = File.open('app/assets/images/the_mill/mill3.jpg');
+the_mill.photos.attach(io: the_mill1, filename: 'the_mill1');
+the_mill.photos.attach(io: the_mill2, filename: 'the_mill2');
+the_mill.photos.attach(io: the_mill3, filename: 'the_mill3');
+
+baked_bear1 = File.open('app/assets/images/baked_bear/bakedbear1.jpg');
+baked_bear2 = File.open('app/assets/images/baked_bear/bakedbear2.jpg');
+baked_bear3 = File.open('app/assets/images/baked_bear/bakedbear3.jpg');
+baked_bear.photos.attach(io: baked_bear1, filename: 'bakedbear1');
+baked_bear.photos.attach(io: baked_bear2, filename: 'bakedbear2');
+baked_bear.photos.attach(io: baked_bear3, filename: 'bakedbear3');
+
+sixth_course1 = File.open('app/assets/images/sixth_course/sixth1.jpg');
+sixth_course2 = File.open('app/assets/images/sixth_course/sixth2.jpg');
+sixth_course3 = File.open('app/assets/images/sixth_course/sixth3.jpg');
+sixth_course.photos.attach(io: sixth_course1, filename: 'sixth_course1');
+sixth_course.photos.attach(io: sixth_course2, filename: 'sixth_course2');
+sixth_course.photos.attach(io: sixth_course3, filename: 'sixth_course3');
+
+milkbomb_ice_cream1 = File.open('app/assets/images/milkbomb/milkbomb1.jpg');
+milkbomb_ice_cream2 = File.open('app/assets/images/milkbomb/milkbomb2.jpg');
+milkbomb_ice_cream3 = File.open('app/assets/images/milkbomb/milkbomb3.jpg');
+milkbomb_ice_cream.photos.attach(io: milkbomb_ice_cream1, filename: 'milkbomb_ice_cream1');
+milkbomb_ice_cream.photos.attach(io: milkbomb_ice_cream2, filename: 'milkbomb_ice_cream2');
+milkbomb_ice_cream.photos.attach(io: milkbomb_ice_cream3, filename: 'milkbomb_ice_cream3');
+
+philmore_creamery1 = File.open('app/assets/images/philmore_creamery/philmore1.jpg');
+philmore_creamery2 = File.open('app/assets/images/philmore_creamery/philmore2.jpg');
+philmore_creamery3 = File.open('app/assets/images/philmore_creamery/philmore3.jpg');
+philmore_creamery.photos.attach(io: philmore_creamery1, filename: 'philmore_creamery1');
+philmore_creamery.photos.attach(io: philmore_creamery2, filename: 'philmore_creamery2');
+philmore_creamery.photos.attach(io: philmore_creamery3, filename: 'philmore_creamery3');
+
+
+
 
 
 Category.destroy_all

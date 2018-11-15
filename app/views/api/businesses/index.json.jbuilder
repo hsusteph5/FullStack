@@ -16,6 +16,7 @@ json.businesses do
       json.num_reviews business.reviews.count
       json.extract! business, :id, :name, :address, :phone, :price
       json.categories business.categories.map { |category| category.title }
+      json.photoUrls business.photos.map { |file| url_for(file) }
     end
   end
 end
