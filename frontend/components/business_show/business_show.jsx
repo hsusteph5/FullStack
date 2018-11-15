@@ -9,6 +9,9 @@ import cafeFront from '../../../app/assets/images/cafe-front.png';
 import googleMap from '../../../app/assets/images/google-map.png';
 import ReviewIndex from '../review/review_index';
 import createDollarWords from '../../util/creatingicons.jsx';
+
+
+import image3 from '../../../app/assets/images/crown_and_crumpet/crown_and_crumpet3.jpg';
 // import { Link } from 'react-router-dom';
 
 
@@ -139,9 +142,11 @@ class BusinessShow extends React.Component {
       );
       images = (
         <div>
-          { this.props.business.photoUrls.map((url, idx) => <img key={idx} src={url} style={{width: 225, height: 250}}></img>) }
+          { this.props.business.photoUrls.map((url, idx) => <img key={idx} src={url} style={{width: 225, height: 220, "objectFit": "cover"}}></img>) }
         </div>
       );
+
+      // { this.props.business.photoUrls.map((url, idx) => <img key={idx} src={url} style={{width: 225, height: 220}}></img>) }
       // <img src={this.props.business.photoUrls[0]}></img>
       // <img src={this.props.business.photoUrls[1]}></img>
       // <img src={this.props.business.photoUrls[2]}></img>
