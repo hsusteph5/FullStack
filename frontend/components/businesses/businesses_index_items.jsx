@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from "react-router";
 import titleize  from 'titleize';
-import { parsingStreet, parsingCity, parsingPrice, createRatingStars } from '../../util/parsing_manager.jsx';
+import { parsingStreet, parsingCity, parsingPrice, createRatingStars } from '../../util/helper_functions/parsing_manager.jsx';
 import { Link } from 'react-router-dom';
 
 class BusinessesIndexItems extends React.Component {

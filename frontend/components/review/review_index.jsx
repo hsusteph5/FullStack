@@ -1,6 +1,6 @@
 import React from 'react';
 import icon from '../../../app/assets/images/user-icon.png';
-import { createRatingStars } from '../../util/parsing_manager.jsx';
+import { createRatingStars } from '../../util/helper_functions/parsing_manager.jsx';
 
 //from the business show page, you get passed the
 //users: {50: {}, 43: {}, 21: {}}

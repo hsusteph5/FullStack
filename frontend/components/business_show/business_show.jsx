@@ -2,12 +2,10 @@ import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import CategoriesContainer from '../search/categories_container';
 import titleize  from 'titleize';
-import { createRatingStars, parsingPrice, businessCategories, parsingCity, parsingStreet } from '../../util/parsing_manager.jsx'
+import { createRatingStars, parsingPrice, businessCategories, parsingCity, parsingStreet } from '../../util/helper_functions/parsing_manager.jsx'
 import googleMap from '../../../app/assets/images/google-map.png';
 import ReviewIndex from '../review/review_index';
-import createDollarWords from '../../util/creatingicons.jsx';
-
-
+import { createDollarWords, createDollars } from '../icon_components/creatingicons.jsx';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -16,7 +14,6 @@ class BusinessShow extends React.Component {
       name: "",
     }
     this.businessCategories = this.businessCategories.bind(this);
-    this.createDollars = this.createDollars.bind(this);
     this.searchBusinesses = this.searchBusinesses.bind(this);
     this.reviewForm = this.reviewForm.bind(this);
   }
@@ -54,46 +51,6 @@ class BusinessShow extends React.Component {
     this.props.fetchBusiness(int);
   }
 
-  createDollars() {
-    if(this.props.business.price === 1) {
-      return (
-        <li>
-          <i className="fas fa-dollar-sign green-dollar"></i>
-          <i className="fas fa-dollar-sign grey-dollar"></i>
-          <i className="fas fa-dollar-sign grey-dollar"></i>
-          <i className="fas fa-dollar-sign grey-dollar"></i>
-        </li>
-      );
-    } else if (this.props.business.price === 2){
-      return (
-        <li>
-          <i className="fas fa-dollar-sign green-dollar"></i>
-          <i className="fas fa-dollar-sign green-dollar"></i>
-          <i className="fas fa-dollar-sign grey-dollar"></i>
-          <i className="fas fa-dollar-sign grey-dollar"></i>
-        </li>
-      );
-    } if(this.props.business.price === 3) {
-      return (
-        <li>
-          <i className="fas fa-dollar-sign green-dollar"></i>
-          <i className="fas fa-dollar-sign green-dollar"></i>
-          <i className="fas fa-dollar-sign green-dollar"></i>
-          <i className="fas fa-dollar-sign grey-dollar"></i>
-        </li>
-      );
-    } else if (this.props.business.price === 4){
-      return (
-        <li>
-          <i className="fas fa-dollar-sign green-dollar"></i>
-          <i className="fas fa-dollar-sign green-dollar"></i>
-          <i className="fas fa-dollar-sign green-dollar"></i>
-          <i className="fas fa-dollar-sign green-dollar"></i>
-        </li>
-      );
-    }
-  }
-
   reviewForm(e){
     e.preventDefault;
     this.props.history.push(`/businesses/${this.props.business.id}/writeareview`);
@@ -101,14 +58,13 @@ class BusinessShow extends React.Component {
 
   render() {
     let images;
-    // let images = (this.props.business) ? (<img src={this.props.business.photoUrls[0]}></img>) : ("")
     let businessInfo;
     let businessAddress;
     let dollars;
     let dollarsInfo;
     let reviewIndex;
     if (this.props.business){
-      dollars = this.createDollars();
+      dollars = createDollars(this.props.business.price);
       dollarsInfo = createDollarWords(this.props.business.price);
       reviewIndex = (
         <div>
