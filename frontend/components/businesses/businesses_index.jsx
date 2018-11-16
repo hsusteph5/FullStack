@@ -5,7 +5,6 @@ import BestInSF from './best_in_SF';
 import CategoriesContainer from '../search/categories_container';
 import { parseSearch } from '../../util/parsing_manager.jsx';
 
-
 class BusinessesIndex extends React.Component {
   constructor(props) {
     super(props);
