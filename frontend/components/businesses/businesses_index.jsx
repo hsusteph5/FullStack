@@ -23,12 +23,10 @@ class BusinessesIndex extends React.Component {
       let searchParams = this.props.location.search;
       //searchQuery will parse out the name into a { name: 'tea'}
       let parseParams = parseSearch(searchParams);
-
       //decode URI parses out of the white spaces %20
       let decodeParams = decodeURI(parseParams);
       //save the query string into the local state and save the category into the local state
       this.setState({query: searchParams, name: decodeParams});
-
       //since you are not visiting a new route, you need to see if the current params looks
       //like the next params
       this.props.fetchBusinesses({name: `${decodeParams}`});

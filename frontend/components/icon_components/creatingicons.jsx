@@ -1,5 +1,6 @@
 import React from 'react';
 
+//for busines show page 
 export const createDollarWords = (price) => {
   let priceWords = ['Inexpensive', 'Moderate', 'Pricey', 'Above $61'];
   return (

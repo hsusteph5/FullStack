@@ -6,6 +6,7 @@ import { createRatingStars, parsingPrice, businessCategories, parsingCity, parsi
 import googleMap from '../../../app/assets/images/google-map.png';
 import ReviewIndex from '../review/review_index';
 import { createDollarWords, createDollars } from '../icon_components/creatingicons.jsx';
+import { BusinessAddress } from './businessIndexItems';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -82,13 +83,7 @@ class BusinessShow extends React.Component {
         </div>
       );
       businessAddress = (
-        <ul>
-          <li><img src={googleMap}></img></li>
-          <li className="show-address"><i className="fas fa-map-marker-alt"></i>{parsingStreet(this.props.business.address)}</li>
-          <li className="show-address"><span className="extra-padding-marker"></span>{parsingCity(this.props.business.address)}</li>
-          <li className="show-phone"><i className="fas fa-phone"></i>{this.props.business.phone}</li>
-          <li className="show-link"><i className="fas fa-external-link-alt"></i><a target="_blank" href={`http://${this.props.business.url}`}>{this.props.business.url}</a></li>
-        </ul>
+        <BusinessAddress address={this.props.business.address} url={this.props.business.url} phone={this.props.business.phone}/>
       );
       images = (
         <div>
@@ -104,7 +99,6 @@ class BusinessShow extends React.Component {
           </div>
         </div>
 
-
         <div className="background-categories-container">
           <CategoriesContainer />
           <button className="categories-write-review" onClick={this.reviewForm}>
@@ -112,7 +106,6 @@ class BusinessShow extends React.Component {
               Write a Review
           </button>
         </div>
-
 
         <div className="background-business-show-info-container">
           <div className="business-show-header">
@@ -128,14 +121,9 @@ class BusinessShow extends React.Component {
             <div className="show-images-reel">
               <div className="business-address">
                 { businessAddress }
-
               </div>
               { images }
-
             </div>
-
-
-
           </div>
         </div>
 
@@ -158,15 +146,10 @@ class BusinessShow extends React.Component {
                   <li><span className="bold-health blue-health">Full Menu</span></li>
                   { dollarsInfo }
                   <li><span><span className="bold-health blue-health">Health Score</span> 100 out of 100</span></li>
-
-
                 </ul>
               </div>
             </div>
-
           </div>
-
-
         </div>
       </div>
     );
