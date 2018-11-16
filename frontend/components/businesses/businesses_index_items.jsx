@@ -1,5 +1,4 @@
 import React from 'react';
-import tea from '../../../app/assets/images/tea.jpg';
 import { withRouter } from "react-router";
 import titleize  from 'titleize';
 import { parsingStreet, parsingCity, parsingPrice, createRatingStars } from '../../util/parsing_manager.jsx';
