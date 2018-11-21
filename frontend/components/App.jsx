@@ -8,7 +8,7 @@ import BusinessesContainer from './businesses/businesses_container';
 import BusinessShowContainer from './business_show/business_show_container';
 import ReviewFormContainer from './review/review_form_container';
 
-import Splash from './splash/splash';
+import SplashContainer from './splash/splash_container';
 import Modal from './modal/modal';
 
 const App = () => (
@@ -20,7 +20,7 @@ const App = () => (
       <Route exact path='/businesses' component={BusinessesContainer} />
       <Route exact path ='/businesses/:businessId' component={BusinessShowContainer}/>
       <ProtectedRoute exact path ='/businesses/:businessId/writeareview' component={ReviewFormContainer}/>
-      <Route exact path="/"component={Splash} />
+      <Route exact path="/"component={SplashContainer} />
       <Redirect push to="/" />
     </Switch>
 

@@ -4,33 +4,35 @@ import yip from '../../../app/assets/images/yip-logo.png';
 import SearchContainer from '../search/search_container';
 import CategoriesContainer from '../search/categories_container';
 import FooterSplashComponent from './footer_index';
+import YipSFComponent from './Yip_SF_Component';
 
-class Splash extends React.Component {
+class SplashIndex extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    this.props.fetchBusinesses( {name: "" });
+  }
+
   render (){
+    let threeBusinesses = this.props.businesses.slice(0, 3);
     return (
         <div className ="splash-page">
           <div className="overlay">
             <div className="splash-page-container">
-
               <NavBarContainer />
-
               <div className="logo-input-container">
-
                 <img className="logo-splash" src={yip}></img>
                 <SearchContainer height="45px" fontsize="20px"/>
-
                 <CategoriesContainer />
-
                 <div className="photo-credits">
                   <p>Photo Credits by Roman Kraft</p>
-
                 </div>
-
-
               </div>
-
             </div>
         </div>
+        <YipSFComponent businesses={threeBusinesses} />
         <FooterSplashComponent />
       </div>
     );
@@ -38,4 +40,4 @@ class Splash extends React.Component {
 }
 
 
-export default Splash;
+export default SplashIndex;

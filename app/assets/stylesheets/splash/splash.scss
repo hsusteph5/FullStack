@@ -88,3 +88,69 @@ footer.credits img {
 .all-credits a {
   color: #0073bb;
 }
+
+.splash-business-container{
+  display: flex; 
+  justify-content: center;
+  flex-direction: row;
+}
+
+.splash-business-index {
+  margin: 15px;
+  display: flex; 
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid #f5f5f5;
+}
+
+.splash-business-description {
+  display: flex; 
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.splash-business-description > h4 > a {
+  font-weight: 700;
+  color: #0073bb;
+}
+
+.splash-business-description > h4 {
+  text-align: left;
+}
+
+.splash-business-description > h5 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+}
+
+.splash-business-description > h5:last-of-type {
+  color: #ff7f50; 
+  // font-size: 12px;
+}
+
+#splash-business-reviews {
+  color: grey;
+  font-size: 12px;
+  display: inline;
+}
+
+.yip-sf-container{
+  margin-top: 40px;
+  text-align: center;
+}
+
+.yip-sf-container h2, .yip-sf-container h3 {
+  margin-top: 10px;
+  color: #CC0000;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.yip-sf-container h3 {
+  font-size: 15px;
+}
