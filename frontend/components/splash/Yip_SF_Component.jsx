@@ -9,11 +9,11 @@ const YipSFComponent = ( { businesses } ) => {
                 <div className="splash-business-index" key={business.id}>
                     <img src={business.photoUrls[0]} style={{width: 225, height: 225, objectFit: 'cover'}}></img>
                     <div className="splash-business-description">
-                        <h4><a href>{business.name}</a></h4>
+                        <h4> {business.name} </h4>
                         <h5>{ stars }</h5>
                         <h5 id="splash-business-reviews">{business.num_reviews} reviews</h5>
                         <h5>San Francisco</h5>
-                        <h5><i class="fas fa-fire"></i> Opened 5 weeks ago </h5>
+                        <h5><i className="fas fa-fire"></i> Opened 5 weeks ago </h5>
                     </div>
                 </div>
             )
