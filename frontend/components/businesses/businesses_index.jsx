@@ -69,10 +69,6 @@ class BusinessesIndex extends React.Component {
 
         <div className="background-categories-container">
           <CategoriesContainer />
-          <button className="categories-write-review">
-            <i className="fas fa-pencil-alt"></i>
-            Write a Review
-          </button>
         </div>
 
         <div className="best-in-SF-background">
@@ -80,16 +76,16 @@ class BusinessesIndex extends React.Component {
         </div>
 
         <div className="splash-page-container">
-
-
           { businessName }
-
         </div>
-
-
       </div>
     );
   }
 }
 
 export default BusinessesIndex;
+
+/* <button className="categories-write-review">
+<i className="fas fa-pencil-alt"></i>
+Write a Review
+</button> */

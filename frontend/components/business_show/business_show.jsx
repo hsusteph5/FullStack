@@ -101,10 +101,6 @@ class BusinessShow extends React.Component {
 
         <div className="background-categories-container">
           <CategoriesContainer />
-          <button className="categories-write-review" onClick={this.reviewForm}>
-              <i className="fas fa-pencil-alt"></i>
-              Write a Review
-          </button>
         </div>
 
         <div className="background-business-show-info-container">
@@ -157,3 +153,4 @@ class BusinessShow extends React.Component {
 }
 
 export default BusinessShow;
+

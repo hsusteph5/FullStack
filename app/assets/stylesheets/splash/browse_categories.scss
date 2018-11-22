@@ -14,7 +14,7 @@
 .splash-category-index:hover {
     border: 1px solid #0073bb;
     cursor: pointer;
-    box-shadow: 0px 5px 6px -6px grey;
+    box-shadow: 2px 6px 5px #D3D3D3;
 }
 
 .splash-category-index:hover h4 {
@@ -36,11 +36,12 @@
 }
 
 .browse-category {
+    padding: 30px 0;
     color: #CC0000;
     font-weight: 700;
     font-size: 20px;
     text-align: center;
-    padding-top: 30px;
+    // padding-top: 30px;
     background: #f5f5f5;
 }
 
@@ -49,4 +50,8 @@ img.splash-category-images {
     width: 50px;
     height: 50px;
     // object-fit: 'cover';
+}
+
+.browse-category h2 {
+    margin: 15px 0;
 }

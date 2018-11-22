@@ -6,6 +6,7 @@ import CategoriesContainer from '../search/categories_container';
 import FooterSplashComponent from './footer_index';
 import YipSFComponent from './Yip_SF_Component';
 import BrowseCategory from './browse_category.jsx';
+import SplashSoftware from './splash_software';
 
 class SplashIndex extends React.Component {
   constructor(props){
@@ -28,13 +29,14 @@ class SplashIndex extends React.Component {
                 <SearchContainer height="45px" fontsize="20px"/>
                 <CategoriesContainer />
                 <div className="photo-credits">
-                  <p>Photo Credits by Roman Kraft</p>
+                  <p>Photo by Roman Kraft</p>
                 </div>
               </div>
             </div>
         </div>
         <YipSFComponent businesses={threeBusinesses} />
         <BrowseCategory fetchBusinesses={this.props.fetchBusinesses}/>
+        <SplashSoftware />
         <FooterSplashComponent />
 
       </div>

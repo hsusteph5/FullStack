@@ -22,6 +22,17 @@ const YipSFComponent = ( { businesses } ) => {
     ): ("");
     return(
         <div className="yip-sf-container">
+            <h2>Yip San Francisco</h2>
+            <div className="yip-san-francisco">
+                
+                <ul>
+                    <li>Los Angeles</li>
+                    <li>New York</li>
+                    <li>San Jose</li>
+                    <li>Chicago</li>
+                    <li>Palo Alto</li>
+                </ul>
+            </div>
             <h3> Hot & New Businesses </h3>
             <div className="splash-business-container">
                 { businessHTML }

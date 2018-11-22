@@ -1,0 +1,82 @@
+
+.splash-business-index {
+    margin: 15px;
+    display: flex; 
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid#DCDCDC;
+}
+
+.splash-business-description {
+    display: flex; 
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.splash-business-description > h4 > a {
+    font-weight: 700;
+    color: #0073bb;
+}
+
+.splash-business-description > h4 {
+    text-align: left;   
+}
+
+.splash-business-description > h5 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: left;
+}
+
+.splash-business-description > h5:last-of-type {
+    color: #ff7f50; 
+}
+
+#splash-business-reviews {
+    color: grey;
+    font-size: 12px;
+    display: inline;
+}
+
+.yip-sf-container{
+    margin: 40px 0;
+    text-align: center;
+}
+
+.yip-sf-container h2, .yip-sf-container h3 {
+    margin-top: 10px;
+    color: #CC0000;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.yip-sf-container h3 {
+    font-size: 15px;
+}
+
+.yip-san-francisco {
+    margin: 10px auto;
+    border-bottom: 1px solid #DCDCDC;
+    width: 750px;
+}
+
+.yip-san-francisco ul {
+    display: flex; 
+    justify-content: center;
+    flex-direction: row;
+}
+
+.yip-san-francisco li {
+    padding: 3px 10px;
+    font-size: 14px;
+    color: #696969;
+    border-bottom: 3px solid white;
+}
+
+.yip-san-francisco li:hover {
+    border-bottom: 3px solid #CC0000;   
+}

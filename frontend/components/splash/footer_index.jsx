@@ -28,31 +28,27 @@ const SplashFooterComponent = () => {
               </ul>
             </div>
 
-            <div> 
-              <h3>Discover</h3>
-                <ul>
-                  <li><p>The Local Yip</p></li>
-                  <li><p>Yip Blog</p></li>
-                  <li><p>Support</p></li>
-                  <li><p>Yip Mobile</p></li>
-                  <li><p>Developers</p></li>
-                  <li><p>RSS</p></li>
-                </ul>
-            </div>
-
-
-
             <div>
-              <h3>Icon Credits</h3>
+              <h3>Attributions</h3>
                 <ul>
-                  <li>Site: <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></li>
-                  <li><a href="https://www.flaticon.com/authors/mynamepong" title="mynamepong">mynamepong</a></li>
-                  <li><a href="https://www.freepik.com/" title="Freepik">Freepik</a></li>
-                  <li><a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a></li>
-                  <li>License: <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank"> CC 3.0 BY</a></li>
+                  <li><div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></li>
+                  <li><div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></li>
+                  <li><div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></li>
+                  <li><div>Icons made by <a href="https://www.flaticon.com/authors/mynamepong" title="mynamepong">mynamepong</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></li>
+                  <li><div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> 
+                    from <a href="https://www.flaticon.com/" 			    
+                    title="Flaticon">www.flaticon.com</a> 
+                    is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    
+                    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></li>
+                  <li>
+                    <div>Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" 
+                    title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" 			    
+                    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                  </li>
                 </ul>
             </div>
           </div>
+          
           <img src={cityscape_illustration} alt="cityscape_illustration"></img>
       </footer>
     );
@@ -61,8 +57,14 @@ const SplashFooterComponent = () => {
 
 export default SplashFooterComponent;
 
-          // <div>Icons made by <a href="https://www.flaticon.com/authors/mynamepong" title="mynamepong">mynamepong</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-          // <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-          // <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-          // <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-          
+        //   <div> 
+        //   <h3>Discover</h3>
+        //     <ul>
+        //       <li><p>The Local Yip</p></li>
+        //       <li><p>Yip Blog</p></li>
+        //       <li><p>Support</p></li>
+        //       <li><p>Yip Mobile</p></li>
+        //       <li><p>Developers</p></li>
+        //       <li><p>RSS</p></li>
+        //     </ul>
+        // </div>
