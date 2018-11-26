@@ -28,8 +28,11 @@ class NavBar extends React.Component {
     return (e) => {
       e.preventDefault();
       this.setState({name: category});
-      this.props.fetchBusinesses(this.state)
-      .then(() => this.props.history.push({pathname:'/businesses', search: `?name=""`}));
+      console.log(this.state);
+      // this.props.fetchBusinesses()
+      // .then(() => 
+      
+      this.props.history.push({pathname:'/businesses', search: `?name=dessert`});
     }
   }
 
@@ -47,7 +50,7 @@ class NavBar extends React.Component {
     );
     let left = (
       <ul>
-        <li><div className="writeReview" onClick={() => this.searchBusinesses("")}>Write a Review</div></li>
+        <li><button className="writeReview" onClick={this.searchBusinesses()}>Write a Review</button></li>
       </ul>
     );
 

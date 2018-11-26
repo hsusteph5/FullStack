@@ -16,13 +16,19 @@
   z-index: 1;
 }
 
-.nav-bar-container a {
+.nav-bar-container a, .nav-bar-container button {
   color: white;
   font-size: 14px;
   padding: 10px;
+  background: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid transparent;
+  font-weight: 700;
 }
 
-a.writeReview {
+li .writeReview {
   padding-left: 0;
 }
 
@@ -31,12 +37,13 @@ a.writeReview {
 }
 
 
-.nav-bar-container a {
-  border-bottom: 2px solid none;
-}
+// .nav-bar-container a {
+//   border-bottom: 2px solid none;
+// }
 
-.nav-bar-container a:hover {
+.nav-bar-container a:hover, .nav-bar-container button:hover {
   border-bottom: 2px solid white;
+  cursor: pointer;
 }
 
 .left-bar-navigation > ul, .right-bar-navigation > ul {
