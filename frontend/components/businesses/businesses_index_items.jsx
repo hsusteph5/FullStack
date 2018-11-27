@@ -81,37 +81,25 @@ class BusinessesIndexItems extends React.Component {
           <div className="main-businesses">
             <button onClick={this.redirectShow(this.business.id)}>{ this.business.name }</button>
             <div className ="main-businesses-content">
-
               <div className="business-reviews-info">
-
-
                 <h3> { createRatingStars(this.business.avg_rating)}
-
                 </h3>
                 <ul className="index-categories-list">
                   <li>{ parsingPrice(this.business.price)}</li>
                   <li className="business-circle"> <i className="fas fa-circle"></i> </li>
                   { this.businessCategories(this.business.categories) }
                 </ul>
-
               </div>
-
               <ul className="business-index-items-info">
                 <li> { parsingStreet(this.business.address) } </li>
                 <li> { parsingCity(this.business.address) } </li>
                 <li> { this.business.phone } </li>
               </ul>
             </div>
-
             <p>
               {review.description}
             </p>
-
-
           </div>
-
-
-
         </div>
       </div>
     );

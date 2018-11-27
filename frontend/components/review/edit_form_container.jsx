@@ -6,19 +6,21 @@ import { Link } from 'react-router-dom';
 import icon from '../../../app/assets/images/user-icon.png';
 import yip from '../../../app/assets/images/yip-logo.png';
 import StarComponent from './star-component';
+import { fetchBusiness } from '../../actions/business_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    review: state.entities.reviews[ownProps.match.params.id],
-    businesses: state.entities.businesses
+    review: state.entities.reviews[ownProps.match.params.reviewId],
+    businesses: Object.values(state.entities.businesses)[0]
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateReview: (review) => dispatch(updateReview(review)),
-    fetchReview: (id) => dispatch(fetchReview(id))
+    fetchReview: (id) => dispatch(fetchReview(id)),
+    fetchBusiness: (id) => dispatch(fetchBusiness(id))
   }
 }
 
@@ -28,9 +30,8 @@ class EditReviewForm extends React.Component {
     super(props);
     this.state = {
       rating: "",
-      description: "",
-      // business_id: this.props.match.params.businessId,
-      id: this.props.match.params.reviewId
+      description: this.props.review.description,
+      id: this.props.match.params.reviewId,
     }
     this.submitReview = this.submitReview.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
@@ -57,9 +58,14 @@ class EditReviewForm extends React.Component {
       .then(res => this.props.history.push(`/businesses/${res.review.business_id}`));
   }
 
+  componentDidMount(){
+    //fetch reviews and businesses so there is a business name
+    this.props.fetchReview(parseInt(this.props.match.params.reviewId))
+      .then((res) => this.props.fetchBusiness(res.review[this.props.match.params.reviewId].business_id))
+  }
+
   render(){
     //need to check if the business exists before displaying it
-    let name;
     let errors;
     if (this.props.business){
       name = (
@@ -75,6 +81,9 @@ class EditReviewForm extends React.Component {
         </ul>
       )
     }
+    //sets a businessName if a business exists
+    let businessName = (this.props.businesses) ? (this.props.businesses.name) : ("")
+    
     return(
       <div className="create-review-form">
         <div className="create-review-form-nav-bar">
@@ -94,15 +103,12 @@ class EditReviewForm extends React.Component {
                         <img onClick = {() => this.props.openModal('dropdown')} src={icon}></img>
                     </li>
                     <li>
-
                       <div className='dropdown-button'>
                         <i className="fas fa-sort-down"></i>
                       </div>
-
                     </li>
                 </ul>
               </div>
-
             </nav>
           </div>
         </div>
@@ -112,23 +118,19 @@ class EditReviewForm extends React.Component {
           <div>
             { errors }
           </div>
+          <h1> { businessName } </h1>
 
-          { name }
           <form className="create-review-form-container">
             <StarComponent updateRating={this.updateRating} />
-
             <textarea
-              placeholder="Your review helps others learn about great local busineses"
+              placeholder={"Your review helps others learn about great local busineses"}
               onChange={this.updateDescription}
               value={this.state.description}
               className="review-form-description"
               >
             </textarea>
-
           </form>
           <button type="submit" onClick={this.submitReview} className="create-review-button">Update a Review</button>
-
-
         </div>
       </div>
     );

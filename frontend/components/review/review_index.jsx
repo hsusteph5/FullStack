@@ -2,11 +2,11 @@ import React from 'react';
 import icon from '../../../app/assets/images/user-icon.png';
 import { createRatingStars } from '../../util/helper_functions/parsing_manager.jsx';
 import { Link } from 'react-router-dom';
+import { withRouter } from "react-router";
 
 //from the business show page, you get passed the
 //users: {50: {}, 43: {}, 21: {}}
-const ReviewIndex = ({users, reviews, currentUserId}) => {
-  // debugger;
+const ReviewIndex = ({users, reviews, currentUserId, businessName}) => {
 
   //need to pass down the session
   let editButton;
@@ -18,15 +18,13 @@ const ReviewIndex = ({users, reviews, currentUserId}) => {
     }
 
     //if the the current user owns the review, edit button will appear
-
     //comment this in when you fix the edit form
     editButton = (currentUserId === review.author_id) ? (
-      <Link to={`/reviews/${review.id}/editareview`}>
+      <Link to={{pathname: `/businesses/${review.id}/editareview`, state: {business: businessName, description: review.description}
+      }}>
         Edit this review
       </Link>
-    ): ("")
-
-
+    ): ("");
 
     return (
       <div className="business-review-container" key={review.id}>
@@ -37,7 +35,6 @@ const ReviewIndex = ({users, reviews, currentUserId}) => {
             <li className="review-city">San Francisco, CA</li>
             <li> { editButton }</li>
           </ul>
-
         </div>
 
         <div className="review-description-container">
@@ -51,15 +48,9 @@ const ReviewIndex = ({users, reviews, currentUserId}) => {
     <div>
       <div>
         { review }
-
-        <ul>
-
-
-        </ul>
-
       </div>
     </div>
   )
 }
 
-export default ReviewIndex;
+export default withRouter(ReviewIndex);

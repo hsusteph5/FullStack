@@ -56,11 +56,6 @@ class BusinessShow extends React.Component {
     e.preventDefault;
     this.props.history.push(`/businesses/${this.props.business.id}/writeareview`);
   }
-  
-  editForm(e){
-    e.preventDefault;
-    this.props.history.push(`/businesses/${this.props.business.id}/writeareview`);
-  }
 
   render() {
     let images;
@@ -74,7 +69,7 @@ class BusinessShow extends React.Component {
       dollarsInfo = createDollarWords(this.props.business.price);
       reviewIndex = (
         <div>
-          <ReviewIndex users={this.props.users} reviews={this.props.reviews} currentUserId={this.props.currentUserId}/>
+          <ReviewIndex users={this.props.users} reviews={this.props.reviews} currentUserId={this.props.currentUserId} businessName={this.props.business.name}/>
         </div>
       )
       businessInfo = (

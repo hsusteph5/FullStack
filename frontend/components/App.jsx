@@ -20,7 +20,7 @@ const App = () => (
       <Route exact path='/businesses' component={BusinessesContainer} />
       <Route exact path ='/businesses/:businessId' component={BusinessShowContainer}/>
       <ProtectedRoute exact path ='/businesses/:businessId/writeareview' component={ReviewFormContainer}/>
-      <ProtectedRoute exact path ='/reviews/:reviewId/editareview' component={EditFormContainer}/>
+      <ProtectedRoute exact path ='/businesses/:reviewId/editareview' component={EditFormContainer}/>
       <Route exact path="/"component={SplashContainer} />
       <Redirect push to="/" />
     </Switch>
