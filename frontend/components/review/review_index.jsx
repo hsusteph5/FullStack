@@ -1,6 +1,7 @@
 import React from 'react';
 import icon from '../../../app/assets/images/user-icon.png';
 import { createRatingStars } from '../../util/helper_functions/parsing_manager.jsx';
+import { Link } from 'react-router-dom';
 
 //from the business show page, you get passed the
 //users: {50: {}, 43: {}, 21: {}}
@@ -20,9 +21,9 @@ const ReviewIndex = ({users, reviews, currentUserId}) => {
 
     //comment this in when you fix the edit form
     editButton = (currentUserId === review.author_id) ? (
-      <button>
+      <Link to={`/reviews/${review.id}/editareview`}>
         Edit this review
-      </button>
+      </Link>
     ): ("")
 
 

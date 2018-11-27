@@ -56,6 +56,11 @@ class BusinessShow extends React.Component {
     e.preventDefault;
     this.props.history.push(`/businesses/${this.props.business.id}/writeareview`);
   }
+  
+  editForm(e){
+    e.preventDefault;
+    this.props.history.push(`/businesses/${this.props.business.id}/writeareview`);
+  }
 
   render() {
     let images;
