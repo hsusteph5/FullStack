@@ -5,8 +5,9 @@ import Root from './components/root';
 //testing
 // import { login, signup } from './util/session_api_util';
 // import { loginUser, signupUser, logout } from './actions/session_actions';
-import { fetchBusiness } from './actions/business_actions';
-import { createReview, updateReview } from './actions/review_actions';
+// import { fetchBusiness } from './actions/business_actions';
+// import { createReview, updateReview } from './actions/review_actions';
+// import { getLocation } from './util/geolocation.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.signupUser = signupUser;
   // window.logout = logout;
 
-
+  window.getLocation = getLocation; 
   // window.updateReview = updateReview;
   // window.fetchBusiness = fetchBusiness;
   // window.createReview = createReview;
