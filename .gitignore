@@ -19,3 +19,5 @@ public/images/
 .byebug_history
 
 config/master.key
+config/prod_key.js
+

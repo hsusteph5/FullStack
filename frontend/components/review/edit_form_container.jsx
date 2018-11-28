@@ -30,7 +30,7 @@ class EditReviewForm extends React.Component {
     super(props);
     this.state = {
       rating: "",
-      description: this.props.review.description,
+      description: this.props.review.description, 
       id: this.props.match.params.reviewId,
     }
     this.submitReview = this.submitReview.bind(this);
@@ -63,7 +63,7 @@ class EditReviewForm extends React.Component {
     this.props.fetchReview(parseInt(this.props.match.params.reviewId))
       .then((res) => this.props.fetchBusiness(res.review[this.props.match.params.reviewId].business_id))
   }
-
+  
   render(){
     //need to check if the business exists before displaying it
     let errors;
@@ -137,5 +137,7 @@ class EditReviewForm extends React.Component {
   }
 }
 
+
+// value={this.state.description}
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditReviewForm)
