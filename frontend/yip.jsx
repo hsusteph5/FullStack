@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.signupUser = signupUser;
   // window.logout = logout;
 
-  window.getLocation = getLocation; 
+  // window.getLocation = getLocation; 
   // window.updateReview = updateReview;
   // window.fetchBusiness = fetchBusiness;
   // window.createReview = createReview;
