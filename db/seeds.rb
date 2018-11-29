@@ -20,7 +20,7 @@ users << user4
 Business.destroy_all
 businesses = []
 boba_guys = Business.create!(name: 'Boba Guys', address: '3491 19th St San Francisco, CA 94110', phone: '(415) 967-2622', url: "bobaguys.com", price: 1, 
-lat: 37.760030 lng: -122.421109)
+lat: 37.760030, lng: -122.421109)
 businesses << boba_guys
 coco = Business.create!(name: 'CoCo Fresh Tea & Juice', address: '2699 Taylor St San Francisco, CA 94133', phone: '(415) 441-1627', url: "en.coco-tea.com", price: 1, 
 lat: 37.8071135, lng: -122.4158169)
