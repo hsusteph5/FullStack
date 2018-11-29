@@ -15,7 +15,7 @@
 #
 
 class Business < ApplicationRecord
-  validates :name, :address, :phone, :price, presence: true
+  validates :name, :address, :phone, :price, :lng, :lat, presence: true
   validates :name, :address, :phone, uniqueness: true
   validates :price, :inclusion => 1..4
 

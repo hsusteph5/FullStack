@@ -1,4 +1,4 @@
-import GOOGLE_KEY from '../../config/prod_key.js';
+const GOOGLE_KEY = require('../../config/prod_key.js').googleAPI;
 
 export const getLocation = (location) => {
     return (
