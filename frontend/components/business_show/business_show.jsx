@@ -3,10 +3,11 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 import CategoriesContainer from '../search/categories_container';
 import titleize  from 'titleize';
 import { createRatingStars, parsingPrice, businessCategories, parsingCity, parsingStreet } from '../../util/helper_functions/parsing_manager.jsx'
-import googleMap from '../../../app/assets/images/google-map.png';
+// import googleMap from '../../../app/assets/images/google-map.png';
 import ReviewIndex from '../review/review_index';
 import { createDollarWords, createDollars } from '../icon_components/creatingicons.jsx';
 import { BusinessAddress } from './businessIndexItems';
+// import BusinessShowMap from './business_show_map';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -83,7 +84,7 @@ class BusinessShow extends React.Component {
         </div>
       );
       businessAddress = (
-        <BusinessAddress address={this.props.business.address} url={this.props.business.url} phone={this.props.business.phone}/>
+        <BusinessAddress address={this.props.business.address} url={this.props.business.url} phone={this.props.business.phone} business={this.props.business}/>
       );
       images = (
         <div>
@@ -111,7 +112,6 @@ class BusinessShow extends React.Component {
                 { businessInfo }
               </div>
               <button className="business-show-review" onClick={this.reviewForm}><i className="fas fa-star"></i>Write a Review</button>
-
             </div>
 
             <div className="show-images-reel">
