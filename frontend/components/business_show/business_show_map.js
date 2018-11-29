@@ -13,7 +13,7 @@ class BusinessShowMap extends React.Component {
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
         this.MarkerManager.createMarkersFromBusinesses(this.props.business);
-        console.log('mount', this.props.business)
+        // console.log('mount', this.props.business)
     }
 
     componentDidUpdate(prevProps){
@@ -22,7 +22,7 @@ class BusinessShowMap extends React.Component {
         zoom: 20
       };
       if(prevProps.business !== this.props.business){
-        console.log('change in props')
+        // console.log('change in props')
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
         this.MarkerManager.createMarkersFromBusinesses(this.props.business);

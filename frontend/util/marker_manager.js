@@ -6,8 +6,8 @@ export default class MarkerManager {
     }
 
     updateMarkers(businesses) {
-        console.log('time to update');
-        console.log(businesses)
+        // console.log('time to update');
+        // console.log(businesses)
         for(let i = 0; i < businesses.length; i++){
             this.markers[businesses[i].id] = [businesses[i].lat, businesses[i].lng]
             this.createMarkersFromBusinesses(businesses[i]);

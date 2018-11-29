@@ -28,7 +28,7 @@ class NavBar extends React.Component {
     return (e) => {
       e.preventDefault();
       this.setState({name: category});
-      console.log(this.state);
+      // console.log(this.state);
       // this.props.fetchBusinesses()
       // .then(() => 
       
