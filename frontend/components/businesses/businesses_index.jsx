@@ -4,6 +4,7 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 import BestInSF from './best_in_SF';
 import CategoriesContainer from '../search/categories_container';
 import { parseSearch } from '../../util/helper_functions/parsing_manager.jsx';
+import { withRouter } from "react-router";
 
 class BusinessesIndex extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class BusinessesIndex extends React.Component {
 
 //when the url reached is not the same as the previous url saved, fetch new businesses
   parseFetchBusiness() {
+    // debugger;
     if(this.state.query !== this.props.location.search) {
       let searchParams = this.props.location.search;
       //searchQuery will parse out the name into a { name: 'tea'}
@@ -83,7 +85,9 @@ class BusinessesIndex extends React.Component {
   }
 }
 
-export default BusinessesIndex;
+
+export default withRouter(BusinessesIndex);
+// export default BusinessesIndex;
 
 /* <button className="categories-write-review">
 <i className="fas fa-pencil-alt"></i>

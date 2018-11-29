@@ -20,7 +20,7 @@ users << user4
 Business.destroy_all
 businesses = []
 boba_guys = Business.create!(name: 'Boba Guys', address: '3491 19th St San Francisco, CA 94110', phone: '(415) 967-2622', url: "bobaguys.com", price: 1, 
-lat: 37.7599926, lng: -122.421119)
+lat: 37.760030 lng: -122.421109)
 businesses << boba_guys
 coco = Business.create!(name: 'CoCo Fresh Tea & Juice', address: '2699 Taylor St San Francisco, CA 94133', phone: '(415) 441-1627', url: "en.coco-tea.com", price: 1, 
 lat: 37.8071135, lng: -122.4158169)
@@ -56,7 +56,7 @@ baked_bear =  Business.create!(name: 'The Baked Bear', address: "2824 Jones St S
 lat: 37.8073978, lng: -122.4171608)
 businesses << baked_bear
 sixth_course = Business.create!(name: 'Sixth Course', address: "1544 15th St San Francisco, CA 94103", phone: '(415) 829-2461', url: "sixthcourse.com", price: 2,
-lat: 37.7669668, lng: -122.4187426)
+lat: 37.767012, lng: -122.418747)
 businesses << sixth_course
 milkbomb_ice_cream = Business.create!(name: 'Milkbomb Ice Cream', address: "1717 17th St San Francisco, CA 94107", phone: '(415) 780-4429', url: "milkbombicecream.com", price: 1,
 lat: 37.7644783, lng: -122.4011822)
