@@ -19,7 +19,7 @@ users << user4
 #Business seeds
 Business.destroy_all
 businesses = []
-boba_guys = Business.create!(name: 'Bubble Guys', address: '3491 19th St San Francisco, CA 94110', phone: '(415) 967-2622', url: "bobaguys.com", price: 1, 
+boba_guys = Business.create!(name: 'Boba Guys', address: '3491 19th St San Francisco, CA 94110', phone: '(415) 967-2622', url: "bobaguys.com", price: 1, 
 lat: 37.760030, lng: -122.421109)
 businesses << boba_guys
 coco = Business.create!(name: 'CoCo Fresh Tea & Juice', address: '2699 Taylor St San Francisco, CA 94133', phone: '(415) 441-1627', url: "en.coco-tea.com", price: 1, 
@@ -200,8 +200,8 @@ dessert_philmore_creamery = Categorizing.create!(category_id: dessert.id, busine
 categorizings << dessert_philmore_creamery
 
 #bubble tea
-# bubble_tea_boba_guys = Categorizing.create!(category_id: bubble_tea.id, business_id: boba_guys.id)
-# categorizings << bubble_tea_boba_guys
+bubble_tea_boba_guys = Categorizing.create!(category_id: bubble_tea.id, business_id: boba_guys.id)
+categorizings << bubble_tea_boba_guys
 bubble_tea_steap_tea = Categorizing.create!(category_id: bubble_tea.id, business_id: steap_tea.id)
 categorizings << bubble_tea_steap_tea
 bubble_tea_black_sugar = Categorizing.create!(category_id: bubble_tea.id, business_id: black_sugar.id)
