@@ -173,8 +173,6 @@ philmore_creamery.photos.attach(io: philmore_creamery3, filename: 'philmore_crea
 
 
 
-
-
 Category.destroy_all
 categories = []
 cafe = Category.create!(title: 'cafe')
@@ -183,12 +181,6 @@ bubble_tea = Category.create!(title: 'bubble tea')
 categories << bubble_tea
 dessert = Category.create!(title: 'dessert')
 categories << dessert
-hotel = Category.create!(title: 'hotel')
-categories << hotel
-spa = Category.create!(title: 'spa')
-categories << spa
-gym = Category.create!(title: 'gym')
-categories << gym
 coffee_and_tea = Category.create!(title: 'coffee & tea')
 categories << coffee_and_tea
 
